@@ -271,7 +271,7 @@
       },
       {
         "id": "trade",
-        "title": "trade",
+        "title": "Trade",
         "content": [
           {
             "type": "text",
@@ -284,7 +284,7 @@
       },
       {
         "id": "nacastorage",
-        "title": "nacastorage",
+        "title": "Nacastorage",
         "content": [
           {
             "type": "text",
@@ -297,7 +297,7 @@
       },
       {
         "id": "wificom",
-        "title": "wificom",
+        "title": "Wificom",
         "content": [
           {
             "type": "text",
@@ -310,7 +310,7 @@
       },
       {
         "id": "back",
-        "title": "back",
+        "title": "Back",
         "content": [
           {
             "type": "text",
