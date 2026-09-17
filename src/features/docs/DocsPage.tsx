@@ -1,6 +1,7 @@
 import { Badge } from "@/shared/ui/Badge";
 import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
 import type { Locale } from "@/shared/i18n/locales";
+import { DocArticle } from "./components/DocArticle";
 import { docsContent, resolveVersionedText } from "./content";
 import styles from "./DocsPage.module.css";
 
@@ -9,6 +10,11 @@ type DocsPageProps = {
 };
 
 const currentVersion = "0.1";
+const articleColors = [
+  { bodyColor: "var(--color-sky-dark)", textColor: "var(--color-white)" },
+  { bodyColor: "var(--color-purple)", textColor: "var(--color-white)" },
+  { bodyColor: "var(--color-pink)", textColor: "var(--color-white)" }
+];
 
 export function DocsPage({ locale }: DocsPageProps) {
   const content = docsContent[locale];
@@ -39,13 +45,15 @@ export function DocsPage({ locale }: DocsPageProps) {
         </aside>
         <div className={styles.blocks}>
           {content.blocks.map((block, index) => (
-            <article className={styles.block} id={block.id} key={block.id}>
-              <div className={styles.blockHeader} data-accent={index % 3}>
-                <span>{content.sectionLabels[block.section]}</span>
-                <h2>{block.title}</h2>
-              </div>
-              <p>{resolveVersionedText(block, currentVersion)}</p>
-            </article>
+            <DocArticle
+              bodyColor={articleColors[index % articleColors.length].bodyColor}
+              id={block.id}
+              key={block.id}
+              textColor={articleColors[index % articleColors.length].textColor}
+              title={block.title}
+            >
+              {resolveVersionedText(block, currentVersion)}
+            </DocArticle>
           ))}
         </div>
       </div>

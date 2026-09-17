@@ -1,0 +1,56 @@
+.article {
+  background: linear-gradient(180deg, var(--doc-article-body) 20%, transparent 100%);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.header {
+  padding: var(--space-2) var(--space-4);
+  text-transform: uppercase;
+  margin-left: var(--space-5);
+  position: relative;
+  color: var(--doc-article-text);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  left: -16px;
+  height: 8px;
+  width: 8px;
+  background: var(--color-white);
+  opacity: 0.9;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 22px;
+  left: -6px;
+  height: 8px;
+  width: 8px;
+  background: var(--color-white);
+  opacity: 0.7;
+}
+
+
+.header h2 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+.body {
+  background: var(--doc-article-body);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  position: relative;
+  background: var(--color-surface);
+}
+
+.body p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+  padding: var(--space-5);
+}

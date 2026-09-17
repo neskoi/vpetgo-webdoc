@@ -36,9 +36,7 @@
 
 .sidebar {
   background: var(--color-surface);
-  border: var(--border-strong);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-pixel);
   padding: var(--space-4);
   position: sticky;
   top: 6rem;
@@ -69,47 +67,6 @@
 .blocks {
   display: grid;
   gap: var(--space-5);
-}
-
-.block {
-  background: var(--color-surface);
-  border: var(--border-strong);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-pixel);
-  overflow: hidden;
-}
-
-.blockHeader {
-  background: var(--color-cyan);
-  border-bottom: var(--border-strong);
-  padding: var(--space-4);
-}
-
-.blockHeader[data-accent="1"] {
-  background: var(--color-green);
-}
-
-.blockHeader[data-accent="2"] {
-  background: var(--color-pink);
-  color: white;
-}
-
-.blockHeader span {
-  font-size: 0.78rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.blockHeader h2 {
-  font-family: var(--font-display);
-  margin: var(--space-1) 0 0;
-}
-
-.block p {
-  font-size: 1rem;
-  line-height: 1.75;
-  margin: 0;
-  padding: var(--space-5);
 }
 
 @media (max-width: 760px) {

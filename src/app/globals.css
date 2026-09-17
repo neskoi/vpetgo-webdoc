@@ -6,12 +6,13 @@
   --color-yellow: #ffd84a;
   --color-green: #52d86a;
   --color-purple: #8d63ff;
+  --color-white: white;
   --color-ink: #172033;
   --color-muted: #5b6680;
   --color-paper: #fffdf7;
   --color-surface: #ffffff;
   --color-page: #e7f7ff;
-  --color-border: #16213d;
+  --color-border: #EBEBEB;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -23,6 +24,7 @@
   --font-display: "Trebuchet MS", Arial, sans-serif;
   --radius-sm: 4px;
   --radius-md: 8px;
+  --radius-lg: 16px;
   --border-strong: 3px solid var(--color-border);
   --shadow-pixel: 5px 5px 0 var(--color-border);
   --focus-ring: 0 0 0 3px var(--color-yellow), 0 0 0 6px var(--color-border);
