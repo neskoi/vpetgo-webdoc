@@ -63,3 +63,12 @@ export type DocSection = {
   content: DocContentBlock[];
   children: DocChild[];
 };
+
+export type DocSectionGroup = {
+  id: string;
+  type: "group";
+  title: string;
+  sections: DocSection[];
+};
+
+export type DocNavigationItem = DocSection | DocSectionGroup;

@@ -1,5 +1,10 @@
 [
   {
+    "id": "getting-started",
+    "type": "group",
+    "title": "Getting Started",
+    "sections": [
+      {
     "id": "instalacao-vpet-go",
     "section": "INSTALLATION",
     "title": "Instalação Vpet GO",
@@ -15,8 +20,15 @@
       }
     ],
     "children": []
+      }
+    ]
   },
   {
+    "id": "on-vpet-go",
+    "type": "group",
+    "title": "On Vpet GO",
+    "sections": [
+      {
     "id": "info",
     "section": "INFO",
     "title": "Info",
@@ -609,5 +621,7 @@
       }
     ],
     "children": []
+      }
+    ]
   }
 ]

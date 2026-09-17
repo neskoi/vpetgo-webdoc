@@ -3,13 +3,13 @@ import enDocsSections from "../../../content/docs/en/sections.json";
 import ptBrContent from "../../../content/pt-BR.json";
 import ptBrDocsSections from "../../../content/docs/pt-BR/sections.json";
 import type { Locale } from "@/shared/i18n/locales";
-import type { DocSection, DocTextBlock } from "@/features/docs/types";
+import type { DocNavigationItem, DocSection, DocTextBlock } from "@/features/docs/types";
 
 export const siteContent: Record<
   Locale,
   typeof enContent & {
     docs: typeof enContent.docs & {
-      sections: DocSection[];
+      sections: DocNavigationItem[];
     };
   }
 > = {
@@ -17,28 +17,36 @@ export const siteContent: Record<
     ...enContent,
     docs: {
       ...enContent.docs,
-      sections: enDocsSections as DocSection[]
+      sections: enDocsSections as DocNavigationItem[]
     }
   },
   "pt-BR": {
     ...ptBrContent,
     docs: {
       ...ptBrContent.docs,
-      sections: ptBrDocsSections as DocSection[]
+      sections: ptBrDocsSections as DocNavigationItem[]
     }
   }
 };
 
+export function isDocSection(item: DocNavigationItem): item is DocSection {
+  return "section" in item;
+}
+
+export function getDocSections(locale: Locale): DocSection[] {
+  return siteContent[locale].docs.sections.flatMap((item) => (isDocSection(item) ? [item] : item.sections));
+}
+
 export function getDefaultDocSectionId(locale: Locale): string {
-  return siteContent[locale].docs.sections[0].id;
+  return getDocSections(locale)[0].id;
 }
 
 export function findDocSection(locale: Locale, sectionId: string): DocSection | undefined {
-  return siteContent[locale].docs.sections.find((section) => section.id === sectionId);
+  return getDocSections(locale).find((section) => section.id === sectionId);
 }
 
 export function getDocSectionIds(locale: Locale): string[] {
-  return siteContent[locale].docs.sections.map((section) => section.id);
+  return getDocSections(locale).map((section) => section.id);
 }
 
 export function resolveVersionedText(block: DocTextBlock, currentVersion: string): string {
