@@ -1,0 +1,87 @@
+.toggle {
+  --toggle-track-width: 3.75rem;
+  --toggle-track-height: 2rem;
+  --toggle-thumb-size: 1.25rem;
+  --toggle-thumb-offset: 0.25rem;
+  --toggle-thumb-travel: 1.5rem;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.5rem;
+  justify-content: center;
+  padding: 0;
+  width: 4.25rem;
+}
+
+.track {
+  background: var(--color-page);
+  border: var(--border-strong);
+  border-radius: 999px;
+  display: block;
+  height: var(--toggle-track-height);
+  overflow: hidden;
+  position: relative;
+  width: var(--toggle-track-width);
+}
+
+.thumb {
+  background: var(--color-yellow);
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  display: grid;
+  height: var(--toggle-thumb-size);
+  left: var(--toggle-thumb-offset);
+  place-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 160ms ease, transform 160ms ease;
+  width: var(--toggle-thumb-size);
+}
+
+.sun {
+  background: var(--color-ink);
+  border-radius: 999px;
+  display: block;
+  height: 0.55rem;
+  width: 0.55rem;
+}
+
+.moon {
+  display: none;
+}
+
+.toggle[aria-pressed="true"] .track {
+  background: var(--color-ink);
+}
+
+.toggle[aria-pressed="true"] .thumb {
+  background: var(--color-cyan);
+  transform: translate(var(--toggle-thumb-travel), -50%);
+}
+
+.toggle[aria-pressed="true"] .sun {
+  display: none;
+}
+
+.toggle[aria-pressed="true"] .moon {
+  background: var(--color-ink);
+  border-radius: 999px;
+  display: block;
+  height: 0.7rem;
+  position: relative;
+  width: 0.7rem;
+}
+
+.toggle[aria-pressed="true"] .moon::after {
+  background: var(--color-cyan);
+  border-radius: 50%;
+  content: "";
+  height: 0.62rem;
+  left: 0.22rem;
+  position: absolute;
+  top: -0.08rem;
+  width: 0.62rem;
+}

@@ -9,10 +9,25 @@ type DownloadPageProps = {
   locale: Locale;
 };
 
-const downloadUrl = "https://google.com";
+function getDownloadUrl() {
+  const value = process.env.VPETGO_DOWNLOAD_URL;
+
+  if (!value) {
+    throw new Error("VPETGO_DOWNLOAD_URL environment variable is required.");
+  }
+
+  const url = new URL(value);
+
+  if (url.protocol !== "http:" && url.protocol !== "https:") {
+    throw new Error("VPETGO_DOWNLOAD_URL must use the http or https protocol.");
+  }
+
+  return url.toString();
+}
 
 export function DownloadPage({ locale }: DownloadPageProps) {
   const content = siteContent[locale].download;
+  const downloadUrl = getDownloadUrl();
 
   return (
     <section className={styles.page}>

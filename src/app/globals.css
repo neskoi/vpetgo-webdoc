@@ -13,6 +13,7 @@
   --color-surface: #ffffff;
   --color-page: #e7f7ff;
   --color-border: #EBEBEB;
+  --color-grid: rgba(22, 33, 61, 0.05);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -36,6 +37,27 @@
   --focus-ring: 0 0 0 3px var(--color-yellow), 0 0 0 6px var(--color-border);
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-sky: #4da3ff;
+  --color-sky-dark: #22436d;
+  --color-cyan: #3bd8f5;
+  --color-pink: #ff6bb1;
+  --color-yellow: #A38300;
+  --color-green: #61db78;
+  --color-purple: #9d75ff;
+  --color-ink: #f0f4fc;
+  --color-muted: #8e9bb3;
+  --color-paper: #1b263b;
+  --color-surface: #131c2e;
+  --color-page: #0b111e;
+  --color-border: #283754;
+  --color-grid: rgba(240, 244, 252, 0.05);
+  --border-strong: 3px solid var(--color-border);
+  --shadow-pixel: 5px 5px 0 var(--color-sky-dark);
+  --focus-ring: 0 0 0 3px var(--color-yellow), 0 0 0 6px var(--color-page);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -49,8 +71,8 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(90deg, rgba(22, 33, 61, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(22, 33, 61, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
     var(--color-page);
   background-size: 24px 24px;
   color: var(--color-ink);

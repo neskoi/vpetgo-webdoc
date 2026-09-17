@@ -8,7 +8,13 @@
   padding: clamp(var(--space-5), 4vw, var(--space-7));
 }
 
+.page > figure {
+  min-width: 0;
+  width: 100%;
+}
+
 .copy {
+  min-width: 0;
   background: var(--color-surface);
   border: var(--border-strong);
   border-radius: var(--radius-md);
@@ -35,6 +41,9 @@
 }
 
 .downloadLink {
+  justify-content: center;
+  max-width: 100%;
+  text-align: center;
   background: var(--color-pink);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -52,11 +61,38 @@
 }
 
 @media (max-width: 760px) {
-  .copy h1 {
-    font-size: var(--font-size-display-md);
+  .page {
+    gap: var(--space-5);
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
   }
 
-  .page {
-    grid-template-columns: 1fr;
+  .copy {
+    padding: var(--space-5);
+  }
+
+  .copy h1 {
+    font-size: var(--font-size-display-sm);
+    overflow-wrap: anywhere;
+  }
+
+  .copy p {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+  }
+
+  .downloadLink {
+    width: 100%;
+  }
+
+  .page > figure {
+    justify-self: center;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 380px) {
+  .copy {
+    padding: var(--space-4);
   }
 }

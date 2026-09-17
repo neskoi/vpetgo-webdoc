@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
 import { LocaleSelect } from "../LocaleSelect";
+import { ThemeToggle } from "../ThemeToggle";
 import styles from "./PublicShell.module.css";
 
 type PublicShellProps = {
@@ -21,6 +22,7 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
         <div className={styles.logo} />
       </div>
       <header className={styles.header}>
+        <ThemeToggle />
         <nav aria-label={content.primaryNavigationLabel} className={styles.nav}>
           <Link
             aria-current={activeSection === "docs" ? "page" : undefined}
