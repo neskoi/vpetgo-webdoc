@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { DocsPage } from "@/features/docs/DocsPage";
-import { findDocSection, getDocSectionIds } from "@/features/docs/content";
 import { PublicShell } from "@/features/shell/PublicShell";
+import { findDocSection, getDocSectionIds } from "@/shared/content/siteContent";
 import { supportedLocales, type Locale } from "@/shared/i18n/locales";
 
 type DocsSectionParams = Promise<{

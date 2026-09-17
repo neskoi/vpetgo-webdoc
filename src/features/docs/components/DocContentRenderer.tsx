@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ComponentType } from "react";
+import { resolveVersionedText } from "@/shared/content/siteContent";
 import type { DocContentBlock, DocCustomComponentKey, DocTextBlock } from "../types";
-import { resolveVersionedText } from "../content";
 import styles from "./DocContentRenderer.module.css";
 
 type DocContentRendererProps = {

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getDefaultDocSectionId } from "@/features/docs/content";
+import { getDefaultDocSectionId } from "@/shared/content/siteContent";
 import type { LocaleParams } from "../layout";
 
 export default async function Page({ params }: { params: LocaleParams }) {

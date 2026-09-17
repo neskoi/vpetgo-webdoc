@@ -1,0 +1,42 @@
+{
+  "shell": {
+    "banner": {
+      "eyebrow": "Guia feito por fãs",
+      "title": "VPET GO"
+    },
+    "navigation": {
+      "docs": "Docs",
+      "download": "Download",
+      "about": "Sobre"
+    },
+    "footer": {
+      "disclaimer": "Projeto de fã sem fins lucrativos.",
+      "status": "Documentação do VPET GO"
+    },
+    "localeSwitcherLabel": "Idioma",
+    "primaryNavigationLabel": "Navegação principal"
+  },
+  "docs": {
+    "title": "Documentação do VPET GO",
+    "intro": "Um manual vibrante para os sistemas deste virtual pet feito por fãs, pronto para regras de cuidado, notas de versão e mídias de guia.",
+    "sidebarTitle": "Seções",
+    "versionLabel": "Bloco de guia"
+  },
+  "download": {
+    "badge": "Digital Gate Open",
+    "title": "Download VPET GO",
+    "description": "Clique no link abaixo para fazer o download do Studio e da versão mais recente do Software do VPET GO.",
+    "note": "Destino temporário de download.",
+    "action": "Baixar Arquivos",
+    "imageAlt": "Área temporária para arte de download do VPET GO",
+    "imageCaption": "Screenshots de release e detalhes do pacote podem ficar aqui."
+  },
+  "about": {
+    "title": "Sobre o VPET GO",
+    "description": "VPET GO é uma experiência feita por fãs inspirada em V-Pets e Tamagotchi, com foco em companhia portátil, rotinas de cuidado e progresso divertido.",
+    "inspiration": "O projeto se inspira em dispositivos clássicos de virtual pet, mas existe como uma obra de fã própria e sem fins comerciais.",
+    "disclaimer": "Projeto de fã sem fins lucrativos.",
+    "imageAlt": "Área temporária para imagem de gameplay do VPET GO",
+    "imageCaption": "Futuras artes de gameplay e guia ficarão aqui."
+  }
+}

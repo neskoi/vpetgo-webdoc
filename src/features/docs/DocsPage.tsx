@@ -1,9 +1,9 @@
 import { Badge } from "@/shared/ui/Badge";
 import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
+import { findDocSection, siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
 import { DocArticle } from "./components/DocArticle";
 import { DocsSidebar } from "./components/DocsSidebar";
-import { docsContent, findDocSection } from "./content";
 import styles from "./DocsPage.module.css";
 
 type DocsPageProps = {
@@ -19,7 +19,7 @@ const articleColors = [
 ];
 
 export function DocsPage({ locale, sectionId }: DocsPageProps) {
-  const content = docsContent[locale];
+  const content = siteContent[locale].docs;
   const activeSection = findDocSection(locale, sectionId);
 
   return (

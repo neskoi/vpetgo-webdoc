@@ -1,16 +1,16 @@
 import Link from "next/link";
+import { siteContent } from "@/shared/content/siteContent";
 import { supportedLocales, type Locale } from "@/shared/i18n/locales";
-import { shellContent } from "./content";
 import styles from "./PublicShell.module.css";
 
 type PublicShellProps = {
   children: React.ReactNode;
   locale: Locale;
-  activeSection: "docs" | "about";
+  activeSection: "docs" | "download" | "about";
 };
 
 export function PublicShell({ children, locale, activeSection }: PublicShellProps) {
-  const content = shellContent[locale];
+  const content = siteContent[locale].shell;
 
   return (
     <div className={styles.shell}>
@@ -31,6 +31,13 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
             href={`/${locale}/docs`}
           >
             {content.navigation.docs}
+          </Link>
+          <Link
+            aria-current={activeSection === "download" ? "page" : undefined}
+            className={styles.navLink}
+            href={`/${locale}/download`}
+          >
+            {content.navigation.download}
           </Link>
           <Link
             aria-current={activeSection === "about" ? "page" : undefined}
