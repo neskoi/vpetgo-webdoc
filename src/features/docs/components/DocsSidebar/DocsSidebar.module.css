@@ -50,7 +50,6 @@
 
 .nodeLink[aria-current="page"] {
   background: var(--color-yellow);
-  border: 2px solid var(--color-border);
 }
 
 .toggleButton {

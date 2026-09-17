@@ -97,7 +97,7 @@ export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, s
     const hasChildren = Boolean(node.children?.length);
     const isOpen = openSectionIds.has(node.id);
     const renderableNode = findFirstRenderableDocNode(node);
-    const isActive = renderableNode?.id === activeSectionId;
+    const isActive = node.id === activeSectionId;
     const style: NavNodeStyle = { "--doc-nav-depth": depth };
 
     return (
