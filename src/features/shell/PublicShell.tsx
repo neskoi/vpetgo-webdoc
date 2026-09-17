@@ -18,7 +18,7 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
   return (
     <div className={styles.shell}>
       <div className={styles.banner}>
-        <div className={styles.logo}/>
+        <div className={styles.logo} />
       </div>
       <header className={styles.header}>
         <Link className={styles.brand} href={docsHref}>
@@ -50,14 +50,14 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
             {content.navigation.about}
           </Link>
         </nav>
-        <Suspense fallback={<div className={styles.localeButton} aria-hidden="true" />}>
-          <LocaleSelect activeSection={activeSection} label={content.localeSwitcherLabel} locale={locale} />
-        </Suspense>
+
       </header>
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
-        <span>{content.footer.status}</span>
         <strong>{content.footer.disclaimer}</strong>
+        <Suspense fallback={<div className={styles.localeButton} aria-hidden="true" />}>
+          <LocaleSelect activeSection={activeSection} label={content.localeSwitcherLabel} locale={locale} />
+        </Suspense>
       </footer>
     </div>
   );

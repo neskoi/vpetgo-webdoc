@@ -72,7 +72,7 @@
 }
 
 .navLink {
-  border: 2px solid transparent;
+  border-bottom: 3px solid transparent;
   border-radius: var(--radius-sm);
   font-weight: 800;
   padding: 0.45rem 0.7rem;
@@ -80,8 +80,8 @@
 }
 
 .navLink[aria-current="page"] {
-  background: var(--color-yellow);
-  border-color: var(--color-border);
+  border-bottom: 3px solid var(--color-yellow);
+  transition: border-color 0.2s ease-in-out;
 }
 
 .localeSwitcher {
@@ -90,9 +90,8 @@
 
 .localeButton {
   align-items: center;
-  background: var(--color-yellow);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  background: none;
+  border: none;
   color: var(--color-ink);
   cursor: pointer;
   display: inline-grid;
@@ -108,7 +107,7 @@
 .localeButton::after {
   border-left: 0.32rem solid transparent;
   border-right: 0.32rem solid transparent;
-  border-top: 0.42rem solid var(--color-ink);
+  border-top: 0.42rem solid var(--color-white);
   content: "";
   height: 0;
   width: 0;
