@@ -3,7 +3,7 @@ import enDocsSections from "../../../content/docs/en/sections.json";
 import ptBrContent from "../../../content/pt-BR.json";
 import ptBrDocsSections from "../../../content/docs/pt-BR/sections.json";
 import type { Locale } from "@/shared/i18n/locales";
-import type { DocNavigationItem, DocSection, DocTextBlock } from "@/features/docs/types";
+import { defaultDocSectionId, type DocNavigationItem, type DocSection, type DocTextBlock } from "@/features/docs/types";
 
 export const siteContent: Record<
   Locale,
@@ -38,7 +38,7 @@ export function getDocSections(locale: Locale): DocSection[] {
 }
 
 export function getDefaultDocSectionId(locale: Locale): string {
-  return getDocSections(locale)[0].id;
+  return findDocSection(locale, defaultDocSectionId)?.id ?? getDocSections(locale)[0].id;
 }
 
 export function findDocSection(locale: Locale, sectionId: string): DocSection | undefined {

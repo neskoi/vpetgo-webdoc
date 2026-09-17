@@ -42,6 +42,7 @@
 
 html {
   min-width: 320px;
+  scroll-padding-top: 7rem;
   scroll-behavior: smooth;
 }
 

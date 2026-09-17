@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Locale } from "@/shared/i18n/locales";
 import type { DocNavigationItem, DocSection } from "../types";
@@ -10,6 +9,7 @@ type DocsSidebarProps = {
   activeSectionId: string;
   label: string;
   locale: Locale;
+  onSelectSection: (sectionId: string, childId?: string) => void;
   sections: DocNavigationItem[];
   title: string;
 };
@@ -70,7 +70,7 @@ function writeOpenSectionIds(locale: Locale, sectionIds: Set<string>) {
   window.localStorage.setItem(getStorageKey(locale), JSON.stringify([...sectionIds]));
 }
 
-export function DocsSidebar({ activeSectionId, label, locale, sections, title }: DocsSidebarProps) {
+export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, sections, title }: DocsSidebarProps) {
   const [openSectionIds, setOpenSectionIds] = useState<Set<string>>(() => getDefaultOpenItemIds(activeSectionId, sections));
 
   useEffect(() => {
@@ -104,14 +104,14 @@ export function DocsSidebar({ activeSectionId, label, locale, sections, title }:
     return (
       <div className={styles.navSection} key={section.id}>
         <div className={styles.sectionRow}>
-          <Link
+          <button
             aria-current={section.id === activeSectionId ? "page" : undefined}
             className={styles.sectionLink}
-            href={`/${locale}/docs/${section.id}`}
-            scroll={false}
+            onClick={() => onSelectSection(section.id)}
+            type="button"
           >
             {section.title}
-          </Link>
+          </button>
           {hasChildren ? (
             <button
               aria-expanded={isOpen}
@@ -128,7 +128,17 @@ export function DocsSidebar({ activeSectionId, label, locale, sections, title }:
           <div className={styles.navChildren}>
             {section.children.map((child) => (
               <div className={styles.navItem} key={child.id}>
-                <a href={section.id === activeSectionId ? `#${child.id}` : `/${locale}/docs/${section.id}#${child.id}`}>
+                <a
+                  href={section.id === activeSectionId ? `#${child.id}` : `/${locale}/docs?section=${section.id}#${child.id}`}
+                  onClick={
+                    section.id === activeSectionId
+                      ? undefined
+                      : (event) => {
+                          event.preventDefault();
+                          onSelectSection(section.id, child.id);
+                        }
+                  }
+                >
                   {child.title}
                 </a>
               </div>

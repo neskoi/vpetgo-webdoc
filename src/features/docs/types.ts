@@ -10,6 +10,8 @@ export type Section =
   | "DEEP_SLEEP"
   | "EXIT";
 
+export const defaultDocSectionId = "instalacao-vpet-go";
+
 export type VersionedText = {
   default: string;
   [version: string]: string;

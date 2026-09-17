@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteContent } from "@/shared/content/siteContent";
-import { supportedLocales, type Locale } from "@/shared/i18n/locales";
+import type { Locale } from "@/shared/i18n/locales";
+import { LocaleSelect } from "./LocaleSelect";
 import styles from "./PublicShell.module.css";
 
 type PublicShellProps = {
@@ -11,6 +12,7 @@ type PublicShellProps = {
 
 export function PublicShell({ children, locale, activeSection }: PublicShellProps) {
   const content = siteContent[locale].shell;
+  const docsHref = `/${locale}/docs`;
 
   return (
     <div className={styles.shell}>
@@ -18,7 +20,7 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
         <div className={styles.logo}/>
       </div>
       <header className={styles.header}>
-        <Link className={styles.brand} href={`/${locale}/docs`}>
+        <Link className={styles.brand} href={docsHref}>
           <span className={styles.mark} aria-hidden="true">
             VP
           </span>
@@ -28,7 +30,7 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
           <Link
             aria-current={activeSection === "docs" ? "page" : undefined}
             className={styles.navLink}
-            href={`/${locale}/docs`}
+            href={docsHref}
           >
             {content.navigation.docs}
           </Link>
@@ -47,18 +49,7 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
             {content.navigation.about}
           </Link>
         </nav>
-        <div className={styles.localeSwitcher} aria-label={content.localeSwitcherLabel}>
-          {supportedLocales.map((supportedLocale) => (
-            <Link
-              aria-current={supportedLocale === locale ? "true" : undefined}
-              className={styles.localeLink}
-              href={`/${supportedLocale}/${activeSection}`}
-              key={supportedLocale}
-            >
-              {supportedLocale}
-            </Link>
-          ))}
-        </div>
+        <LocaleSelect activeSection={activeSection} label={content.localeSwitcherLabel} locale={locale} />
       </header>
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>

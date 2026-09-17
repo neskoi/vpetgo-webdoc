@@ -21,7 +21,7 @@ export function DownloadPage({ locale }: DownloadPageProps) {
         <h1>{content.title}</h1>
         <p>{content.description}</p>
         <p className={styles.documentationPrompt}>
-          <Link href={`/${locale}/docs/instalacao-vpet-go`}>{content.documentationPrompt}</Link>
+          <Link href={`/${locale}/docs`}>{content.documentationPrompt}</Link>
         </p>
         <a className={styles.downloadLink} href={downloadUrl} rel="noreferrer" target="_blank">
           {content.action}

@@ -1,6 +1,9 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/shared/ui/Badge";
 import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
-import { findDocSection, siteContent } from "@/shared/content/siteContent";
+import { findDocSection, getDefaultDocSectionId, getDocSectionIds, siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
 import { DocArticle } from "./components/DocArticle";
 import { DocsSidebar } from "./components/DocsSidebar";
@@ -8,7 +11,6 @@ import styles from "./DocsPage.module.css";
 
 type DocsPageProps = {
   locale: Locale;
-  sectionId: string;
 };
 
 const currentVersion = "1.7.0";
@@ -18,9 +20,55 @@ const articleColors = [
   { bodyColor: "var(--color-pink)", textColor: "var(--color-white)" }
 ];
 
-export function DocsPage({ locale, sectionId }: DocsPageProps) {
+function readSectionIdFromUrl(validSectionIds: string[], defaultSectionId: string): string {
+  const sectionId = new URLSearchParams(window.location.search).get("section");
+
+  return sectionId && validSectionIds.includes(sectionId) ? sectionId : defaultSectionId;
+}
+
+export function DocsPage({ locale }: DocsPageProps) {
   const content = siteContent[locale].docs;
+  const defaultSectionId = getDefaultDocSectionId(locale);
+  const validSectionIds = useMemo(() => getDocSectionIds(locale), [locale]);
+  const [sectionId, setSectionId] = useState(defaultSectionId);
   const activeSection = findDocSection(locale, sectionId);
+
+  useEffect(() => {
+    function syncSectionFromUrl() {
+      setSectionId(readSectionIdFromUrl(validSectionIds, defaultSectionId));
+    }
+
+    window.setTimeout(syncSectionFromUrl, 0);
+    window.addEventListener("popstate", syncSectionFromUrl);
+
+    return () => window.removeEventListener("popstate", syncSectionFromUrl);
+  }, [defaultSectionId, validSectionIds]);
+
+  function selectSection(nextSectionId: string, childId?: string) {
+    if (!validSectionIds.includes(nextSectionId)) {
+      return;
+    }
+
+    const nextUrl = new URL(window.location.href);
+
+    if (nextSectionId === defaultSectionId) {
+      nextUrl.searchParams.delete("section");
+    } else {
+      nextUrl.searchParams.set("section", nextSectionId);
+    }
+
+    nextUrl.hash = childId ?? "";
+    window.history.pushState(null, "", nextUrl);
+    setSectionId(nextSectionId);
+
+    if (childId) {
+      window.setTimeout(() => {
+        document.getElementById(childId)?.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    } else {
+      window.scrollTo({ behavior: "smooth", top: 0 });
+    }
+  }
 
   return (
     <div className={styles.page}>
@@ -40,6 +88,7 @@ export function DocsPage({ locale, sectionId }: DocsPageProps) {
           activeSectionId={sectionId}
           label={content.sidebarTitle}
           locale={locale}
+          onSelectSection={selectSection}
           sections={content.sections}
           title={content.sidebarTitle}
         />
