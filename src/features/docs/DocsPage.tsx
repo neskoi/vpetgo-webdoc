@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { Badge } from "@/shared/ui/Badge";
 import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
 import type { Locale } from "@/shared/i18n/locales";
 import { DocArticle } from "./components/DocArticle";
+import { DocsSidebar } from "./components/DocsSidebar";
 import { docsContent, findDocSection } from "./content";
 import styles from "./DocsPage.module.css";
 
@@ -36,31 +36,13 @@ export function DocsPage({ locale, sectionId }: DocsPageProps) {
         />
       </section>
       <div className={styles.docsLayout}>
-        <aside className={styles.sidebar}>
-          <h2>{content.sidebarTitle}</h2>
-          <nav aria-label={content.sidebarTitle}>
-            {content.sections.map((section) => (
-              <div className={styles.navSection} key={section.id}>
-                <Link
-                  aria-current={section.id === sectionId ? "page" : undefined}
-                  className={styles.sectionLink}
-                  href={`/${locale}/docs/${section.id}`}
-                >
-                  {section.title}
-                </Link>
-                {section.id === sectionId ? (
-                  <div className={styles.navChildren}>
-                    {section.children.map((child) => (
-                      <div className={styles.navItem} key={child.id}>
-                        <a href={`#${child.id}`}>{child.title}</a>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            ))}
-          </nav>
-        </aside>
+        <DocsSidebar
+          activeSectionId={sectionId}
+          label={content.sidebarTitle}
+          locale={locale}
+          sections={content.sections}
+          title={content.sidebarTitle}
+        />
         <div className={styles.blocks}>
           {activeSection ? (
             <>

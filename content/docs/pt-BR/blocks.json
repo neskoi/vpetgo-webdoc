@@ -15,7 +15,7 @@
     "children": [
       {
         "id": "status",
-        "title": "status",
+        "title": "Status",
         "content": [
           {
             "type": "text",
@@ -28,7 +28,7 @@
       },
       {
         "id": "album",
-        "title": "album",
+        "title": "Album",
         "content": [
           {
             "type": "text",
