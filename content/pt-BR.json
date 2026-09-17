@@ -24,12 +24,12 @@
   "download": {
     "badge": "Digital Gate Open",
     "title": "Download VPET GO",
-    "description": "Clique no link abaixo para fazer o download do Studio e da versão mais recente do Software do VPET GO.",
-    "note": "Destino temporário de download.",
-    "documentationPrompt": "Caso esteja com duvidas acesse a documentação",
+    "description": "Clique no link abaixo para fazer o download da versão mais recente do Studio e do Firmware do VPET GO.",
+    "note": "Link para download",
+    "documentationPrompt": "Dúvidas? Consulte a documentação.",
     "action": "Baixar Arquivos",
     "imageAlt": "Área temporária para arte de download do VPET GO",
-    "imageCaption": "Screenshots de release e detalhes do pacote podem ficar aqui."
+    "imageCaption": "Sim é IA. Manda uma arte sua pra gente por aqui!"
   },
   "about": {
     "title": "Sobre o VPET GO",

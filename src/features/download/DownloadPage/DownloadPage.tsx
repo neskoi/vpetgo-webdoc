@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/shared/ui/Badge";
-import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
 import { siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
 import styles from "./DownloadPage.module.css";
@@ -42,7 +42,19 @@ export function DownloadPage({ locale }: DownloadPageProps) {
           {content.action}
         </a>
       </div>
-      <ImagePlaceholder alt={content.imageAlt} caption={content.imageCaption} aspectRatio="portrait" />
+      <figure className={styles.figure}>
+        <Image
+          alt={content.imageAlt}
+          className={styles.artwork}
+          height={853}
+          sizes="(max-width: 760px) calc(100vw - 2rem), 360px"
+          src="/assets/workingAgumon.webp"
+          width={864}
+        />
+        {content.imageCaption ? (
+          <figcaption className={styles.caption}>{content.imageCaption}</figcaption>
+        ) : null}
+      </figure>
     </section>
   );
 }
