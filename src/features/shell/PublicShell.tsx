@@ -14,6 +14,9 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
 
   return (
     <div className={styles.shell}>
+      <div className={styles.banner}>
+        <div className={styles.logo}/>
+      </div>
       <header className={styles.header}>
         <Link className={styles.brand} href={`/${locale}/docs`}>
           <span className={styles.mark} aria-hidden="true">

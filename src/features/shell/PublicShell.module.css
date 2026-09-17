@@ -4,6 +4,31 @@
   min-height: 100vh;
 }
 
+.banner {
+  align-items: end;
+  border-bottom: var(--border-strong);
+  color: white;
+  display: grid;
+  min-height: clamp(10rem, 24vw, 14rem);
+  padding: var(--space-6) clamp(var(--space-4), 4vw, var(--space-7));
+  background-image: url("/assets/banner.jpg");
+  background-size: cover;
+  background-position: center;  
+  position: relative;
+}
+
+.logo {
+  position:absolute;
+  bottom: var(--space-6);
+  left: var(--space-6);
+  background-image: url("/assets/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 126px;
+  width: 420px;
+}
+
 .header {
   align-items: center;
   background: var(--color-surface);
@@ -11,7 +36,7 @@
   display: grid;
   gap: var(--space-4);
   grid-template-columns: 1fr auto auto;
-  padding: var(--space-4) clamp(var(--space-4), 4vw, var(--space-7));
+  padding: var(--space-2) var(--space-4);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -72,7 +97,7 @@
 
 .footer {
   align-items: center;
-  background: var(--color-ink);
+  background: var(--color-sky-dark);
   color: white;
   display: flex;
   gap: var(--space-4);
