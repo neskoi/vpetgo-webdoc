@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
 import { LocaleSelect } from "./LocaleSelect";
@@ -49,7 +50,9 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
             {content.navigation.about}
           </Link>
         </nav>
-        <LocaleSelect activeSection={activeSection} label={content.localeSwitcherLabel} locale={locale} />
+        <Suspense fallback={<div className={styles.localeButton} aria-hidden="true" />}>
+          <LocaleSelect activeSection={activeSection} label={content.localeSwitcherLabel} locale={locale} />
+        </Suspense>
       </header>
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
