@@ -13,12 +13,12 @@
   padding: var(--space-6) clamp(var(--space-4), 4vw, var(--space-7));
   background-image: url("/assets/banner.jpg");
   background-size: cover;
-  background-position: center;  
+  background-position: center;
   position: relative;
 }
 
 .logo {
-  position:absolute;
+  position: absolute;
   bottom: var(--space-6);
   left: var(--space-6);
   background-image: url("/assets/logo.png");
@@ -42,26 +42,8 @@
   z-index: 10;
 }
 
-.brand {
-  align-items: center;
-  display: inline-flex;
-  font-family: var(--font-display);
-  font-size: var( --font-size-lg);
-  font-weight: 900;
-  gap: var(--space-3);
-  text-decoration: none;
-}
-
-.mark {
-  background: var(--color-pink);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  box-shadow: 3px 3px 0 var(--color-border);
-  color: white;
-  display: inline-grid;
-  min-height: 2rem;
-  min-width: 2rem;
-  place-items: center;
+.nav {
+  margin-left: auto;
 }
 
 .nav,

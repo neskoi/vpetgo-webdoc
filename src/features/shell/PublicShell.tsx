@@ -21,12 +21,6 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
         <div className={styles.logo} />
       </div>
       <header className={styles.header}>
-        <Link className={styles.brand} href={docsHref}>
-          <span className={styles.mark} aria-hidden="true">
-            VP
-          </span>
-          <span>VPET GO</span>
-        </Link>
         <nav aria-label={content.primaryNavigationLabel} className={styles.nav}>
           <Link
             aria-current={activeSection === "docs" ? "page" : undefined}
