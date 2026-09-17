@@ -15,6 +15,11 @@
 - Use vertical slice architecture when developing features in this codebase.
 - Keep feature-specific pages, components, data, tests, and supporting code close to the slice they belong to whenever practical.
 
+## Components
+
+- Each component must live in its own folder. Keep the component implementation, styles, tests, and local support files inside that folder whenever practical.
+- Prefer an `index.ts` file per component folder for exports, so imports target the component folder instead of a specific implementation file.
+
 ## Tooling
 
 - Follow the shared RTK command instructions from `C:\Users\Koi\.codex\RTK.md`.

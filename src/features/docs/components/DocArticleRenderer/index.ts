@@ -1,0 +1,1 @@
+export { DocArticleRenderer } from "./DocArticleRenderer";

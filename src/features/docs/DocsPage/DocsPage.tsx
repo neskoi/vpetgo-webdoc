@@ -5,8 +5,8 @@ import { Badge } from "@/shared/ui/Badge";
 import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
 import { findDocNode, getDefaultDocSectionId, getDocSectionIds, getRenderableDocNodesFromSubtree, resolveDocNode, siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
-import { DocArticleRenderer } from "./components/DocArticleRenderer";
-import { DocsSidebar } from "./components/DocsSidebar";
+import { DocArticleRenderer } from "../components/DocArticleRenderer";
+import { DocsSidebar } from "../components/DocsSidebar";
 import styles from "./DocsPage.module.css";
 
 type DocsPageProps = {

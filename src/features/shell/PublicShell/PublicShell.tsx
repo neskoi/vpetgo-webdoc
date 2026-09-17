@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
-import { LocaleSelect } from "./LocaleSelect";
+import { LocaleSelect } from "../LocaleSelect";
 import styles from "./PublicShell.module.css";
 
 type PublicShellProps = {
@@ -44,12 +44,11 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
             {content.navigation.about}
           </Link>
         </nav>
-
       </header>
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
         <strong>{content.footer.disclaimer}</strong>
-        <Suspense fallback={<div className={styles.localeButton} aria-hidden="true" />}>
+        <Suspense fallback={<div className={styles.localeFallback} aria-hidden="true" />}>
           <LocaleSelect activeSection={activeSection} label={content.localeSwitcherLabel} locale={locale} />
         </Suspense>
       </footer>

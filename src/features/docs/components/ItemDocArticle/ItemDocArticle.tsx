@@ -1,5 +1,5 @@
-import type { DocContentBlock } from "../types";
-import { DocContentRenderer } from "./DocContentRenderer";
+import type { DocContentBlock } from "../../types";
+import { DocContentRenderer } from "../DocContentRenderer";
 import styles from "./ItemDocArticle.module.css";
 
 type ItemDocArticleProps = {

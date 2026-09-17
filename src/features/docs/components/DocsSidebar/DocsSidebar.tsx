@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 import { findFirstRenderableDocNode } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
-import type { DocNode } from "../types";
+import type { DocNode } from "../../types";
 import styles from "./DocsSidebar.module.css";
 
 type DocsSidebarProps = {

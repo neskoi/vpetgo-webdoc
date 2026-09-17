@@ -1,7 +1,7 @@
 import type { ComponentType } from "react";
-import type { DocContentBlock } from "../types";
-import { DocArticle } from "./DocArticle";
-import { ItemDocArticle } from "./ItemDocArticle";
+import type { DocContentBlock } from "../../types";
+import { DocArticle } from "../DocArticle";
+import { ItemDocArticle } from "../ItemDocArticle";
 
 type DocArticleRendererProps = {
   bodyColor: string;
