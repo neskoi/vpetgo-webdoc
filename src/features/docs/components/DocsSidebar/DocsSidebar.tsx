@@ -13,7 +13,6 @@ type DocsSidebarProps = {
   locale: Locale;
   onSelectSection: (sectionId: string, childId?: string) => void;
   sections: DocNode[];
-  title: string;
 };
 
 type NavNodeStyle = CSSProperties & {
@@ -59,7 +58,7 @@ function writeOpenSectionIds(locale: Locale, sectionIds: Set<string>) {
   window.localStorage.setItem(getStorageKey(locale), JSON.stringify([...sectionIds]));
 }
 
-export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, sections, title }: DocsSidebarProps) {
+export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, sections }: DocsSidebarProps) {
   const [openSectionIds, setOpenSectionIds] = useState<Set<string>>(() => collectExpandableNodeIds(sections));
 
   useEffect(() => {
@@ -136,7 +135,6 @@ export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, s
 
   return (
     <aside className={styles.sidebar}>
-      <h2>{title}</h2>
       <nav aria-label={label}>{sections.map((section) => renderNode(section, 0))}</nav>
     </aside>
   );

@@ -68,8 +68,6 @@ export function DocsPage({ locale }: DocsPageProps) {
       window.setTimeout(() => {
         document.getElementById(childId)?.scrollIntoView({ behavior: "smooth" });
       }, 0);
-    } else {
-      window.scrollTo({ behavior: "smooth", top: 0 });
     }
   }
 
@@ -93,7 +91,6 @@ export function DocsPage({ locale }: DocsPageProps) {
           locale={locale}
           onSelectSection={selectSection}
           sections={content.sections}
-          title={content.sidebarTitle}
         />
         <div className={styles.blocks}>
           {activeNode ? (
