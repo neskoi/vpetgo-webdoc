@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Badge } from "@/shared/ui/Badge";
 import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
 import { siteContent } from "@/shared/content/siteContent";
@@ -19,6 +20,9 @@ export function DownloadPage({ locale }: DownloadPageProps) {
         <Badge>{content.badge}</Badge>
         <h1>{content.title}</h1>
         <p>{content.description}</p>
+        <p className={styles.documentationPrompt}>
+          <Link href={`/${locale}/docs/info#instalacao-vpet-go`}>{content.documentationPrompt}</Link>
+        </p>
         <a className={styles.downloadLink} href={downloadUrl} rel="noreferrer" target="_blank">
           {content.action}
         </a>

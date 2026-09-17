@@ -29,6 +29,10 @@
   margin: 0 0 var(--space-4);
 }
 
+.documentationPrompt a {
+  color: var(--color-sky-dark);
+  font-weight: 900;
+}
 
 .downloadLink {
   background: var(--color-pink);

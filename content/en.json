@@ -27,6 +27,7 @@
     "title": "Download VPET GO",
     "description": "Use this page to get the latest public game build. The final link can point to Google Drive or another hosted release source.",
     "note": "Temporary download destination.",
+    "documentationPrompt": "Caso esteja com duvidas acesse a documentação",
     "action": "Open download page",
     "imageAlt": "Temporary download artwork area for VPET GO",
     "imageCaption": "Release screenshots and package details can live here."

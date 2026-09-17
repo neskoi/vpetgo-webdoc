@@ -38,6 +38,19 @@
             }
           }
         ]
+      },
+      {
+        "id": "instalacao-vpet-go",
+        "title": "Instalação Vpet GO",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": ["1.7.0"],
+            "content": {
+              "default": "Installation notes for VPET GO will be documented here."
+            }
+          }
+        ]
       }
     ]
   },
