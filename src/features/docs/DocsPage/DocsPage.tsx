@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Badge } from "@/shared/ui/Badge";
-import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
 import { findDocNode, findDocNodePath, getDefaultDocSectionId, getDocSectionIds, getRenderableDocNodesFromSubtree, resolveDocNode, siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
 import { DocArticleRenderer } from "../components/DocArticleRenderer";
@@ -76,14 +74,9 @@ export function DocsPage({ locale }: DocsPageProps) {
     <div className={styles.page}>
       <section className={styles.hero}>
         <div>
-          <Badge>{content.versionLabel} {currentVersion}</Badge>
-          <h1>{content.title}</h1>
+          <h1 className={styles.title}>{content.title} {currentVersion}</h1>
           <p>{content.intro}</p>
         </div>
-        <ImagePlaceholder
-          alt={locale === "en" ? "Pixel style guide artwork space" : "Espaco para arte de guia em estilo pixel"}
-          aspectRatio="square"
-        />
       </section>
       <div className={styles.docsLayout}>
         <DocsSidebar

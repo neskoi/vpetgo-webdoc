@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { Badge } from "@/shared/ui/Badge";
-import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
 import { siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
 import styles from "./AboutPage.module.css";
@@ -18,9 +18,20 @@ export function AboutPage({ locale }: AboutPageProps) {
         <h1>{content.title}</h1>
         <p>{content.description}</p>
         <p>{content.inspiration}</p>
-        <strong className={styles.disclaimer}>{content.disclaimer}</strong>
       </div>
-      <ImagePlaceholder alt={content.imageAlt} caption={content.imageCaption} aspectRatio="portrait" />
+      <figure className={styles.figure}>
+        <Image
+          alt={content.imageAlt}
+          className={styles.artwork}
+          height={1222}
+          sizes="(max-width: 760px) calc(100vw - 3rem), 360px"
+          src="/assets/palmonHoldingGo.jpeg"
+          width={864}
+        />
+        {content.imageCaption ? (
+          <figcaption className={styles.caption}>{content.imageCaption}</figcaption>
+        ) : null}
+      </figure>
     </section>
   );
 }

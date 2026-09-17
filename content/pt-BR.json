@@ -16,10 +16,9 @@
     "primaryNavigationLabel": "Navegação principal"
   },
   "docs": {
-    "title": "Documentação do VPET GO",
-    "intro": "Um manual vibrante para os sistemas deste virtual pet feito por fãs, pronto para regras de cuidado, notas de versão e mídias de guia.",
-    "sidebarTitle": "Seções",
-    "versionLabel": "Bloco de guia"
+    "title": "Versão",
+    "intro": "Documentação oficial do VPET GO, como construir, configurar e usar o dispositivo.",
+    "sidebarTitle": "Seções"
   },
   "download": {
     "badge": "Digital Gate Open",
@@ -33,10 +32,10 @@
   },
   "about": {
     "title": "Sobre o VPET GO",
-    "description": "VPET GO é uma experiência feita por fãs inspirada em V-Pets e Tamagotchi, com foco em companhia portátil, rotinas de cuidado e progresso divertido.",
-    "inspiration": "O projeto se inspira em dispositivos clássicos de virtual pet, mas existe como uma obra de fã própria e sem fins comerciais.",
+    "description": "VPET GO é um projeto desenvolvido por Rurounik, um fã de Digimon, com o objetivo de criar a experiência que sempre quis ter.",
+    "inspiration": "O projeto é inspirado em dispositivos clássicos, mas experimentando coisas novas.",
     "disclaimer": "Projeto de fã sem fins lucrativos.",
     "imageAlt": "Área temporária para imagem de gameplay do VPET GO",
-    "imageCaption": "Futuras artes de gameplay e guia ficarão aqui."
+    "imageCaption": "É de IA, mas podia ser seu ;)"
   }
 }
