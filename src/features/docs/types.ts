@@ -1,15 +1,3 @@
-export type Section =
-  | "INSTALLATION"
-  | "INFO"
-  | "CARE"
-  | "DIGIMON"
-  | "ONLINE"
-  | "STORE"
-  | "OPTIONS"
-  | "INTERACTION"
-  | "DEEP_SLEEP"
-  | "EXIT";
-
 export const defaultDocSectionId = "instalacao-vpet-go";
 
 export type VersionedText = {
@@ -52,25 +40,9 @@ export type DocCustomBlock = VersionedContent & {
 
 export type DocContentBlock = DocTextBlock | DocImageBlock | DocVideoBlock | DocCustomBlock;
 
-export type DocChild = {
+export type DocNode = {
   id: string;
   title: string;
-  content: DocContentBlock[];
+  content?: DocContentBlock[];
+  children?: DocNode[];
 };
-
-export type DocSection = {
-  id: string;
-  section: Section;
-  title: string;
-  content: DocContentBlock[];
-  children: DocChild[];
-};
-
-export type DocSectionGroup = {
-  id: string;
-  type: "group";
-  title: string;
-  sections: DocSection[];
-};
-
-export type DocNavigationItem = DocSection | DocSectionGroup;

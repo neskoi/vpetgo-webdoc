@@ -1,52 +1,32 @@
 [
   {
     "id": "getting-started",
-    "type": "group",
     "title": "Getting Started",
-    "sections": [
+    "children": [
       {
-    "id": "instalacao-vpet-go",
-    "section": "INSTALLATION",
-    "title": "Instalação Vpet GO",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
-        ],
-        "content": {
-          "default": "Installation notes for VPET GO will be documented here."
-        }
-      }
-    ],
-    "children": []
+        "id": "instalacao-vpet-go",
+        "title": "Instalação Vpet GO",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": [
+              "1.7.0"
+            ],
+            "content": {
+              "default": "Installation notes for VPET GO will be documented here."
+            }
+          }
+        ]
       }
     ]
   },
   {
     "id": "on-vpet-go",
-    "type": "group",
     "title": "On Vpet GO",
-    "sections": [
-      {
-    "id": "info",
-    "section": "INFO",
-    "title": "Info",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
-        ],
-        "content": {
-          "default": "Info contains the device information screens."
-        }
-      }
-    ],
     "children": [
       {
-        "id": "status",
-        "title": "status",
+        "id": "info",
+        "title": "Info",
         "content": [
           {
             "type": "text",
@@ -54,62 +34,46 @@
               "1.7.0"
             ],
             "content": {
-              "default": "Documentation for status."
+              "default": "Info contains the device information screens."
             }
           }
-        ]
-      },
-      {
-        "id": "album",
-        "title": "album",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for album."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "care",
-    "section": "CARE",
-    "title": "Care",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
         ],
-        "content": {
-          "default": "Care contains partner maintenance actions."
-        }
-      }
-    ],
-    "children": [
-      {
-        "id": "item",
-        "title": "Item",
-        "content": [
+        "children": [
           {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Item."
-            }
+            "id": "status",
+            "title": "status",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for status."
+                }
+              }
+            ]
+          },
+          {
+            "id": "album",
+            "title": "album",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for album."
+                }
+              }
+            ]
           }
         ]
       },
       {
-        "id": "sleep",
-        "title": "Sleep",
+        "id": "care",
+        "title": "Care",
         "content": [
           {
             "type": "text",
@@ -117,92 +81,91 @@
               "1.7.0"
             ],
             "content": {
-              "default": "Documentation for Sleep."
+              "default": "Care contains partner maintenance actions."
             }
           }
-        ]
-      },
-      {
-        "id": "heal",
-        "title": "Heal",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Heal."
-            }
-          }
-        ]
-      },
-      {
-        "id": "clean",
-        "title": "Clean",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Clean."
-            }
-          }
-        ]
-      },
-      {
-        "id": "back",
-        "title": "Back",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Back."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "digimon",
-    "section": "DIGIMON",
-    "title": "Digimon",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
         ],
-        "content": {
-          "default": "Digimon contains training and battle entries."
-        }
-      }
-    ],
-    "children": [
-      {
-        "id": "training",
-        "title": "Training",
-        "content": [
+        "children": [
           {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Training."
-            }
+            "id": "item",
+            "title": "Item",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Item."
+                }
+              }
+            ]
+          },
+          {
+            "id": "sleep",
+            "title": "Sleep",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Sleep."
+                }
+              }
+            ]
+          },
+          {
+            "id": "heal",
+            "title": "Heal",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Heal."
+                }
+              }
+            ]
+          },
+          {
+            "id": "clean",
+            "title": "Clean",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Clean."
+                }
+              }
+            ]
+          },
+          {
+            "id": "back",
+            "title": "Back",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Back."
+                }
+              }
+            ]
           }
         ]
       },
       {
-        "id": "battle",
-        "title": "Battle",
+        "id": "digimon",
+        "title": "Digimon",
         "content": [
           {
             "type": "text",
@@ -210,122 +173,121 @@
               "1.7.0"
             ],
             "content": {
-              "default": "Documentation for Battle."
+              "default": "Digimon contains training and battle entries."
             }
           }
-        ]
-      },
-      {
-        "id": "quest",
-        "title": "Quest",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Quest."
-            }
-          }
-        ]
-      },
-      {
-        "id": "coliseum",
-        "title": "Coliseum",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Coliseum."
-            }
-          }
-        ]
-      },
-      {
-        "id": "cable-link",
-        "title": "Cable Link",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Cable Link."
-            }
-          }
-        ]
-      },
-      {
-        "id": "vs-bandai",
-        "title": "VS Bandai",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for VS Bandai."
-            }
-          }
-        ]
-      },
-      {
-        "id": "back",
-        "title": "Back",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Back."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "online",
-    "section": "ONLINE",
-    "title": "Online",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
         ],
-        "content": {
-          "default": "Online contains connected features."
-        }
-      }
-    ],
-    "children": [
-      {
-        "id": "battle",
-        "title": "Battle",
-        "content": [
+        "children": [
           {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Battle."
-            }
+            "id": "training",
+            "title": "Training",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Training."
+                }
+              }
+            ]
+          },
+          {
+            "id": "battle",
+            "title": "Battle",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Battle."
+                }
+              }
+            ]
+          },
+          {
+            "id": "quest",
+            "title": "Quest",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Quest."
+                }
+              }
+            ]
+          },
+          {
+            "id": "coliseum",
+            "title": "Coliseum",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Coliseum."
+                }
+              }
+            ]
+          },
+          {
+            "id": "cable-link",
+            "title": "Cable Link",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Cable Link."
+                }
+              }
+            ]
+          },
+          {
+            "id": "vs-bandai",
+            "title": "VS Bandai",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for VS Bandai."
+                }
+              }
+            ]
+          },
+          {
+            "id": "back",
+            "title": "Back",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Back."
+                }
+              }
+            ]
           }
         ]
       },
       {
-        "id": "jogres",
-        "title": "Jogres",
+        "id": "online",
+        "title": "Online",
         "content": [
           {
             "type": "text",
@@ -333,124 +295,243 @@
               "1.7.0"
             ],
             "content": {
-              "default": "Documentation for Jogres."
+              "default": "Online contains connected features."
             }
           }
-        ]
-      },
-      {
-        "id": "trade",
-        "title": "trade",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for trade."
-            }
-          }
-        ]
-      },
-      {
-        "id": "nacastorage",
-        "title": "nacastorage",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for nacastorage."
-            }
-          }
-        ]
-      },
-      {
-        "id": "wificom",
-        "title": "wificom",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for wificom."
-            }
-          }
-        ]
-      },
-      {
-        "id": "back",
-        "title": "back",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for back."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "store",
-    "section": "STORE",
-    "title": "Store",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
         ],
-        "content": {
-          "default": "Documentation for Store."
-        }
-      }
-    ],
-    "children": []
-  },
-  {
-    "id": "options",
-    "section": "OPTIONS",
-    "title": "Options",
-    "content": [
+        "children": [
+          {
+            "id": "battle",
+            "title": "Battle",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Battle."
+                }
+              }
+            ]
+          },
+          {
+            "id": "jogres",
+            "title": "Jogres",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Jogres."
+                }
+              }
+            ]
+          },
+          {
+            "id": "trade",
+            "title": "trade",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for trade."
+                }
+              }
+            ]
+          },
+          {
+            "id": "nacastorage",
+            "title": "nacastorage",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for nacastorage."
+                }
+              }
+            ]
+          },
+          {
+            "id": "wificom",
+            "title": "wificom",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for wificom."
+                }
+              }
+            ]
+          },
+          {
+            "id": "back",
+            "title": "back",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for back."
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
+        "id": "store",
+        "title": "Store",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": [
+              "1.7.0"
+            ],
+            "content": {
+              "default": "Documentation for Store."
+            }
+          }
+        ]
+      },
+      {
+        "id": "options",
+        "title": "Options",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": [
+              "1.7.0"
+            ],
+            "content": {
+              "default": "Options contains device configuration entries."
+            }
+          }
         ],
-        "content": {
-          "default": "Options contains device configuration entries."
-        }
-      }
-    ],
-    "children": [
-      {
-        "id": "brightness",
-        "title": "Brightness",
-        "content": [
+        "children": [
           {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Brightness."
-            }
+            "id": "brightness",
+            "title": "Brightness",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Brightness."
+                }
+              }
+            ]
+          },
+          {
+            "id": "allways-on",
+            "title": "Allways On",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Allways On."
+                }
+              }
+            ]
+          },
+          {
+            "id": "background",
+            "title": "Background",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Background."
+                }
+              }
+            ]
+          },
+          {
+            "id": "wifi",
+            "title": "Wifi",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Wifi."
+                }
+              }
+            ]
+          },
+          {
+            "id": "battery-style",
+            "title": "Battery Style",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Battery Style."
+                }
+              }
+            ]
+          },
+          {
+            "id": "sound-test",
+            "title": "Sound Test",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Sound Test."
+                }
+              }
+            ]
+          },
+          {
+            "id": "back",
+            "title": "Back",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Back."
+                }
+              }
+            ]
           }
         ]
       },
       {
-        "id": "allways-on",
-        "title": "Allways On",
+        "id": "interaction",
+        "title": "Interaction",
         "content": [
           {
             "type": "text",
@@ -458,107 +539,46 @@
               "1.7.0"
             ],
             "content": {
-              "default": "Documentation for Allways On."
+              "default": "Interaction contains physical interaction systems."
             }
           }
-        ]
-      },
-      {
-        "id": "background",
-        "title": "Background",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Background."
-            }
-          }
-        ]
-      },
-      {
-        "id": "wifi",
-        "title": "Wifi",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Wifi."
-            }
-          }
-        ]
-      },
-      {
-        "id": "battery-style",
-        "title": "Battery Style",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Battery Style."
-            }
-          }
-        ]
-      },
-      {
-        "id": "sound-test",
-        "title": "Sound Test",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Sound Test."
-            }
-          }
-        ]
-      },
-      {
-        "id": "back",
-        "title": "Back",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Documentation for Back."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "interaction",
-    "section": "INTERACTION",
-    "title": "Interaction",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
         ],
-        "content": {
-          "default": "Interaction contains physical interaction systems."
-        }
-      }
-    ],
-    "children": [
+        "children": [
+          {
+            "id": "xai",
+            "title": "XAI",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for XAI."
+                }
+              }
+            ]
+          },
+          {
+            "id": "pendulum",
+            "title": "Pendulum",
+            "content": [
+              {
+                "type": "text",
+                "vpetVersions": [
+                  "1.7.0"
+                ],
+                "content": {
+                  "default": "Documentation for Pendulum."
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
-        "id": "xai",
-        "title": "XAI",
+        "id": "deep-sleep",
+        "title": "Deep Sleep",
         "content": [
           {
             "type": "text",
@@ -566,14 +586,14 @@
               "1.7.0"
             ],
             "content": {
-              "default": "Documentation for XAI."
+              "default": "Documentation for Deep Sleep."
             }
           }
         ]
       },
       {
-        "id": "pendulum",
-        "title": "Pendulum",
+        "id": "exit",
+        "title": "Exit",
         "content": [
           {
             "type": "text",
@@ -581,46 +601,10 @@
               "1.7.0"
             ],
             "content": {
-              "default": "Documentation for Pendulum."
+              "default": "Documentation for Exit."
             }
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "deep-sleep",
-    "section": "DEEP_SLEEP",
-    "title": "Deep Sleep",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
-        ],
-        "content": {
-          "default": "Documentation for Deep Sleep."
-        }
-      }
-    ],
-    "children": []
-  },
-  {
-    "id": "exit",
-    "section": "EXIT",
-    "title": "Exit",
-    "content": [
-      {
-        "type": "text",
-        "vpetVersions": [
-          "1.7.0"
-        ],
-        "content": {
-          "default": "Documentation for Exit."
-        }
-      }
-    ],
-    "children": []
       }
     ]
   }

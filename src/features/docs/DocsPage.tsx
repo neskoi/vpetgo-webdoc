@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/shared/ui/Badge";
 import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
-import { findDocSection, getDefaultDocSectionId, getDocSectionIds, siteContent } from "@/shared/content/siteContent";
+import { findDocNode, getDefaultDocSectionId, getDocSectionIds, getRenderableDocNodesFromSubtree, resolveDocNode, siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
-import { DocArticle } from "./components/DocArticle";
+import { DocArticleRenderer } from "./components/DocArticleRenderer";
 import { DocsSidebar } from "./components/DocsSidebar";
 import styles from "./DocsPage.module.css";
 
@@ -31,7 +31,8 @@ export function DocsPage({ locale }: DocsPageProps) {
   const defaultSectionId = getDefaultDocSectionId(locale);
   const validSectionIds = useMemo(() => getDocSectionIds(locale), [locale]);
   const [sectionId, setSectionId] = useState(defaultSectionId);
-  const activeSection = findDocSection(locale, sectionId);
+  const activeNode = findDocNode(locale, sectionId);
+  const renderableNodes = activeNode ? getRenderableDocNodesFromSubtree(activeNode) : [];
 
   useEffect(() => {
     function syncSectionFromUrl() {
@@ -45,21 +46,23 @@ export function DocsPage({ locale }: DocsPageProps) {
   }, [defaultSectionId, validSectionIds]);
 
   function selectSection(nextSectionId: string, childId?: string) {
-    if (!validSectionIds.includes(nextSectionId)) {
+    const nextNode = resolveDocNode(locale, nextSectionId);
+
+    if (!nextNode || !validSectionIds.includes(nextNode.id)) {
       return;
     }
 
     const nextUrl = new URL(window.location.href);
 
-    if (nextSectionId === defaultSectionId) {
+    if (nextNode.id === defaultSectionId) {
       nextUrl.searchParams.delete("section");
     } else {
-      nextUrl.searchParams.set("section", nextSectionId);
+      nextUrl.searchParams.set("section", nextNode.id);
     }
 
     nextUrl.hash = childId ?? "";
     window.history.pushState(null, "", nextUrl);
-    setSectionId(nextSectionId);
+    setSectionId(nextNode.id);
 
     if (childId) {
       window.setTimeout(() => {
@@ -93,28 +96,21 @@ export function DocsPage({ locale }: DocsPageProps) {
           title={content.sidebarTitle}
         />
         <div className={styles.blocks}>
-          {activeSection ? (
+          {activeNode ? (
             <>
               <header className={styles.sectionHeader}>
-                <h2>{activeSection.title}</h2>
+                <h2>{activeNode.title}</h2>
               </header>
-              <DocArticle
-                bodyColor={articleColors[0].bodyColor}
-                content={activeSection.content}
-                currentVersion={currentVersion}
-                id={`${activeSection.id}-overview`}
-                textColor={articleColors[0].textColor}
-                title={activeSection.title}
-              />
-              {activeSection.children.map((child, index) => (
-                <DocArticle
-                  bodyColor={articleColors[(index + 1) % articleColors.length].bodyColor}
-                  content={child.content}
+              {renderableNodes.map((node, index) => (
+                <DocArticleRenderer
+                  bodyColor={articleColors[index % articleColors.length].bodyColor}
+                  content={node.content ?? []}
+                  contentId={node.id}
                   currentVersion={currentVersion}
-                  id={child.id}
-                  key={child.id}
-                  textColor={articleColors[(index + 1) % articleColors.length].textColor}
-                  title={child.title}
+                  htmlId={node.id}
+                  key={node.id}
+                  textColor={articleColors[index % articleColors.length].textColor}
+                  title={node.title}
                 />
               ))}
             </>

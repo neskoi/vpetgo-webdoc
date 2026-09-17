@@ -3,13 +3,13 @@ import enDocsSections from "../../../content/docs/en/sections.json";
 import ptBrContent from "../../../content/pt-BR.json";
 import ptBrDocsSections from "../../../content/docs/pt-BR/sections.json";
 import type { Locale } from "@/shared/i18n/locales";
-import { defaultDocSectionId, type DocNavigationItem, type DocSection, type DocTextBlock } from "@/features/docs/types";
+import { defaultDocSectionId, type DocNode, type DocTextBlock } from "@/features/docs/types";
 
 export const siteContent: Record<
   Locale,
   typeof enContent & {
     docs: typeof enContent.docs & {
-      sections: DocNavigationItem[];
+      sections: DocNode[];
     };
   }
 > = {
@@ -17,36 +17,73 @@ export const siteContent: Record<
     ...enContent,
     docs: {
       ...enContent.docs,
-      sections: enDocsSections as DocNavigationItem[]
+      sections: enDocsSections as DocNode[]
     }
   },
   "pt-BR": {
     ...ptBrContent,
     docs: {
       ...ptBrContent.docs,
-      sections: ptBrDocsSections as DocNavigationItem[]
+      sections: ptBrDocsSections as DocNode[]
     }
   }
 };
 
-export function isDocSection(item: DocNavigationItem): item is DocSection {
-  return "section" in item;
+export function hasDocContent(node: DocNode): boolean {
+  return Boolean(node.content?.length);
 }
 
-export function getDocSections(locale: Locale): DocSection[] {
-  return siteContent[locale].docs.sections.flatMap((item) => (isDocSection(item) ? [item] : item.sections));
+export function flattenDocNodes(nodes: DocNode[]): DocNode[] {
+  return nodes.flatMap((node) => [node, ...flattenDocNodes(node.children ?? [])]);
+}
+
+export function findFirstRenderableDocNode(node: DocNode): DocNode | undefined {
+  if (hasDocContent(node)) {
+    return node;
+  }
+
+  for (const child of node.children ?? []) {
+    const renderableNode = findFirstRenderableDocNode(child);
+
+    if (renderableNode) {
+      return renderableNode;
+    }
+  }
+
+  return undefined;
+}
+
+export function getRenderableDocNodesFromSubtree(node: DocNode): DocNode[] {
+  return [
+    ...(hasDocContent(node) ? [node] : []),
+    ...(node.children ?? []).flatMap((child) => getRenderableDocNodesFromSubtree(child))
+  ];
+}
+
+export function getDocNodes(locale: Locale): DocNode[] {
+  return siteContent[locale].docs.sections;
+}
+
+export function getRenderableDocNodes(locale: Locale): DocNode[] {
+  return flattenDocNodes(getDocNodes(locale)).filter(hasDocContent);
+}
+
+export function findDocNode(locale: Locale, nodeId: string): DocNode | undefined {
+  return flattenDocNodes(getDocNodes(locale)).find((node) => node.id === nodeId);
+}
+
+export function resolveDocNode(locale: Locale, nodeId: string): DocNode | undefined {
+  const node = findDocNode(locale, nodeId);
+
+  return node ? findFirstRenderableDocNode(node) : undefined;
 }
 
 export function getDefaultDocSectionId(locale: Locale): string {
-  return findDocSection(locale, defaultDocSectionId)?.id ?? getDocSections(locale)[0].id;
-}
-
-export function findDocSection(locale: Locale, sectionId: string): DocSection | undefined {
-  return getDocSections(locale).find((section) => section.id === sectionId);
+  return resolveDocNode(locale, defaultDocSectionId)?.id ?? getRenderableDocNodes(locale)[0]?.id ?? defaultDocSectionId;
 }
 
 export function getDocSectionIds(locale: Locale): string[] {
-  return getDocSections(locale).map((section) => section.id);
+  return getRenderableDocNodes(locale).map((node) => node.id);
 }
 
 export function resolveVersionedText(block: DocTextBlock, currentVersion: string): string {

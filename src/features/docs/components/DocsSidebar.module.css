@@ -17,95 +17,44 @@
   gap: var(--space-2);
 }
 
-.navSection {
+.navNode {
   display: grid;
   gap: var(--space-2);
 }
 
-.navGroup {
-  display: grid;
-  gap: var(--space-2);
-}
-
-.groupRow {
-  display: grid;
-}
-
-.groupButton {
-  align-items: center;
-  background: rgba(45, 167, 255, 0.12);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  color: var(--color-ink);
-  cursor: pointer;
-  display: grid;
-  font: inherit;
-  font-family: var(--font-display);
-  font-size: var(--font-size-sm);
-  gap: var(--space-2);
-  grid-template-columns: auto minmax(0, 1fr);
-  padding: var(--space-2);
-  text-align: left;
-}
-
-.groupButton:hover {
-  background: rgba(45, 167, 255, 0.2);
-}
-
-.groupButton span {
-  border-block: 0.28rem solid transparent;
-  border-left: 0.42rem solid var(--color-ink);
-  display: block;
-  height: 0;
-  transition: transform 140ms ease;
-  width: 0;
-}
-
-.groupButton[aria-expanded="true"] span {
-  transform: rotate(90deg);
-}
-
-.groupSections {
-  display: grid;
-  gap: var(--space-2);
-  padding-left: var(--space-2);
-}
-
-.sectionRow {
+.nodeRow {
   align-items: center;
   display: grid;
   gap: var(--space-1);
   grid-template-columns: minmax(0, 1fr) auto;
+  padding-left: calc(var(--doc-nav-depth) * var(--space-3));
 }
 
-.sectionLink,
-.navItem a {
-  border-radius: var(--radius-sm);
-  font-weight: 800;
-  padding: var(--space-2);
-  text-decoration: none;
-}
-
-.sectionLink {
+.nodeLink {
   background: transparent;
   border: 2px solid transparent;
+  border-radius: var(--radius-sm);
   color: inherit;
   cursor: pointer;
-  font: inherit;
-  text-align: left;
-}
-
-.sectionLink:hover,
-.navItem a:hover {
-  background: rgba(45, 167, 255, 0.16);
-}
-
-.sectionLink {
   display: block;
+  font: inherit;
+  font-weight: 800;
+  padding: var(--space-2);
+  text-align: left;
+  text-decoration: none;
   width: 100%;
 }
 
-.sectionLink[aria-current="page"] {
+.nodeLink:hover:not(:disabled) {
+  background: rgba(45, 167, 255, 0.16);
+}
+
+.nodeLink:disabled {
+  color: var(--color-muted);
+  cursor: default;
+}
+
+.nodeLink[aria-current="page"] {
   background: var(--color-yellow);
   border: 2px solid var(--color-border);
 }
@@ -141,21 +90,8 @@
 }
 
 .navChildren {
-  border-left: 2px solid var(--color-border);
   display: grid;
   gap: var(--space-2);
-  margin-left: var(--space-3);
-  padding-left: var(--space-3);
-}
-
-.navItem {
-  display: grid;
-  gap: var(--space-1);
-}
-
-.navItem a {
-  font-size: var(--font-size-sm);
-  padding-block: var(--space-1);
 }
 
 @media (max-width: 760px) {
