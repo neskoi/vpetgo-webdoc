@@ -97,7 +97,7 @@ export function DocsPage({ locale }: DocsPageProps) {
           {activeNode ? (
             <>
               <header className={styles.sectionHeader}>
-                <h2>{activeNode.title}</h2>
+                <h2>{activeNodePath[0]?.title ?? activeNode.title}</h2>
                 <nav aria-label={`${activeNode.title} breadcrumb`} className={styles.breadcrumb}>
                   {activeNodePath.map((node, index) => {
                     const separator = index < activeNodePath.length - 1 ? <span aria-hidden="true">{'>'}</span> : null;
