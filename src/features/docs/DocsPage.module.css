@@ -1,0 +1,124 @@
+.page {
+  padding: clamp(var(--space-5), 4vw, var(--space-7));
+}
+
+.hero {
+  align-items: center;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
+  margin: 0 auto var(--space-7);
+  max-width: 1120px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 1;
+  margin: var(--space-4) 0;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 660px;
+}
+
+.docsLayout {
+  align-items: start;
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 240px minmax(0, 1fr);
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.sidebar {
+  background: var(--color-surface);
+  border: var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-pixel);
+  padding: var(--space-4);
+  position: sticky;
+  top: 6rem;
+}
+
+.sidebar h2 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin: 0 0 var(--space-3);
+}
+
+.sidebar nav {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.sidebar a {
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  padding: var(--space-2);
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: rgba(45, 167, 255, 0.16);
+}
+
+.blocks {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.block {
+  background: var(--color-surface);
+  border: var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-pixel);
+  overflow: hidden;
+}
+
+.blockHeader {
+  background: var(--color-cyan);
+  border-bottom: var(--border-strong);
+  padding: var(--space-4);
+}
+
+.blockHeader[data-accent="1"] {
+  background: var(--color-green);
+}
+
+.blockHeader[data-accent="2"] {
+  background: var(--color-pink);
+  color: white;
+}
+
+.blockHeader span {
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.blockHeader h2 {
+  font-family: var(--font-display);
+  margin: var(--space-1) 0 0;
+}
+
+.block p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+  padding: var(--space-5);
+}
+
+@media (max-width: 760px) {
+  .hero,
+  .docsLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}

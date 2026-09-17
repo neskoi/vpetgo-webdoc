@@ -1,0 +1,46 @@
+.figure {
+  margin: 0;
+}
+
+.placeholder {
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  background:
+    linear-gradient(135deg, rgba(255, 216, 74, 0.55) 0 25%, transparent 25% 50%, rgba(21, 217, 255, 0.45) 50% 75%, transparent 75%),
+    var(--color-paper);
+  background-size: 26px 26px;
+  border: var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-pixel);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.placeholder[data-aspect-ratio="square"] {
+  aspect-ratio: 1;
+}
+
+.placeholder[data-aspect-ratio="portrait"] {
+  aspect-ratio: 4 / 5;
+}
+
+.pixel {
+  background: var(--color-pink);
+  border: var(--border-strong);
+  box-shadow:
+    18px 0 0 var(--color-green),
+    -18px 0 0 var(--color-purple),
+    0 18px 0 var(--color-yellow),
+    0 -18px 0 var(--color-cyan);
+  height: 28px;
+  image-rendering: pixelated;
+  width: 28px;
+}
+
+.caption {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-top: var(--space-3);
+}

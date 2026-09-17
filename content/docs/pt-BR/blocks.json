@@ -1,0 +1,29 @@
+[
+  {
+    "id": "getting-started",
+    "section": "CORE_MECHANICS",
+    "title": "Primeiros Passos",
+    "vpetVersions": ["0.1"],
+    "content": {
+      "default": "A documentação do VPET GO vai descrever o ciclo de cuidado, as regras de progresso e os sistemas visíveis ao jogador em blocos modulares."
+    }
+  },
+  {
+    "id": "care-loop",
+    "section": "FEEDING",
+    "title": "Ciclo de Cuidado",
+    "vpetVersions": ["0.1"],
+    "content": {
+      "default": "A documentação futura vai explicar fome, humor, limpeza, saúde e como pequenas ações diárias moldam cada parceiro."
+    }
+  },
+  {
+    "id": "growth-paths",
+    "section": "EVOLUTION",
+    "title": "Rotas de Crescimento",
+    "vpetVersions": ["0.1"],
+    "content": {
+      "default": "As notas de evolução serão organizadas por ids estáveis para documentar mudanças de versão sem duplicar páginas inteiras."
+    }
+  }
+]
