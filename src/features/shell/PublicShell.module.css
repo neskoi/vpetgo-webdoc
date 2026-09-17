@@ -46,7 +46,7 @@
   align-items: center;
   display: inline-flex;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: var( --font-size-lg);
   font-weight: 900;
   gap: var(--space-3);
   text-decoration: none;
@@ -87,7 +87,7 @@
 }
 
 .localeLink {
-  font-size: 0.85rem;
+  font-size: var(--font-size-xs);
 }
 
 .main {

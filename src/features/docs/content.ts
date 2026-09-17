@@ -1,7 +1,7 @@
 import enBlocks from "../../../content/docs/en/blocks.json";
 import ptBrBlocks from "../../../content/docs/pt-BR/blocks.json";
 import type { Locale } from "@/shared/i18n/locales";
-import type { DocBlock } from "./types";
+import type { DocSection, DocTextBlock } from "./types";
 
 export const docsContent: Record<
   Locale,
@@ -10,7 +10,7 @@ export const docsContent: Record<
     intro: string;
     sidebarTitle: string;
     versionLabel: string;
-    blocks: DocBlock[];
+    sections: DocSection[];
   }
 > = {
   en: {
@@ -19,7 +19,7 @@ export const docsContent: Record<
       "A bright field manual for the fan-made virtual pet systems, prepared for care rules, version notes, and guide media.",
     sidebarTitle: "Sections",
     versionLabel: "Guide block",
-    blocks: enBlocks as DocBlock[]
+    sections: enBlocks as DocSection[]
   },
   "pt-BR": {
     title: "Documentação do VPET GO",
@@ -27,16 +27,28 @@ export const docsContent: Record<
       "Um manual vibrante para os sistemas deste virtual pet feito por fãs, pronto para regras de cuidado, notas de versão e mídias de guia.",
     sidebarTitle: "Seções",
     versionLabel: "Bloco de guia",
-    blocks: ptBrBlocks as DocBlock[]
+    sections: ptBrBlocks as DocSection[]
   }
 };
 
-export function resolveVersionedText(block: DocBlock, currentVersion: string): string {
+export function getDefaultDocSectionId(locale: Locale): string {
+  return docsContent[locale].sections[0].id;
+}
+
+export function findDocSection(locale: Locale, sectionId: string): DocSection | undefined {
+  return docsContent[locale].sections.find((section) => section.id === sectionId);
+}
+
+export function getDocSectionIds(locale: Locale): string[] {
+  return docsContent[locale].sections.map((section) => section.id);
+}
+
+export function resolveVersionedText(block: DocTextBlock, currentVersion: string): string {
   if (block.content[currentVersion]) {
     return block.content[currentVersion];
   }
 
-  const previousVersion = [...block.vpetVersions]
+  const previousVersion = [...(block.vpetVersions ?? [])]
     .reverse()
     .find((version) => version < currentVersion && block.content[version]);
 

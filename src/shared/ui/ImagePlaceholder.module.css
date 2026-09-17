@@ -41,6 +41,6 @@
 
 .caption {
   color: var(--color-muted);
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   margin-top: var(--space-3);
 }

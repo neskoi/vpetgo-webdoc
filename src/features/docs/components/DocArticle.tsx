@@ -1,9 +1,12 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties } from "react";
+import type { DocContentBlock } from "../types";
+import { DocContentRenderer } from "./DocContentRenderer";
 import styles from "./DocArticle.module.css";
 
 type DocArticleProps = {
   bodyColor: string;
-  children: ReactNode;
+  content: DocContentBlock[];
+  currentVersion: string;
   id: string;
   textColor: string;
   title: string;
@@ -14,7 +17,7 @@ type DocArticleStyle = CSSProperties & {
   "--doc-article-text": string;
 };
 
-export function DocArticle({ bodyColor, children, id, textColor, title }: DocArticleProps) {
+export function DocArticle({ bodyColor, content, currentVersion, id, textColor, title }: DocArticleProps) {
   const style: DocArticleStyle = {
     "--doc-article-body": bodyColor,
     "--doc-article-text": textColor
@@ -26,7 +29,7 @@ export function DocArticle({ bodyColor, children, id, textColor, title }: DocArt
         <h2>{title}</h2>
       </header>
       <div className={styles.body}>
-        <p>{children}</p>
+        <DocContentRenderer blocks={content} currentVersion={currentVersion} />
       </div>
     </article>
   );

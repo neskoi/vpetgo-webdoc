@@ -1,29 +1,89 @@
 [
   {
-    "id": "getting-started",
+    "id": "core-mechanics",
     "section": "CORE_MECHANICS",
-    "title": "Primeiros Passos",
-    "vpetVersions": ["0.1"],
-    "content": {
-      "default": "A documentação do VPET GO vai descrever o ciclo de cuidado, as regras de progresso e os sistemas visíveis ao jogador em blocos modulares."
-    }
+    "title": "Mecânicas Principais",
+    "content": [
+      {
+        "type": "text",
+        "vpetVersions": ["0.1"],
+        "content": {
+          "default": "As mecânicas principais reúnem os sistemas que formam o ciclo básico do VPET GO."
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "getting-started",
+        "title": "Primeiros Passos",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": ["0.1"],
+            "content": {
+              "default": "A documentação do VPET GO vai descrever o ciclo de cuidado, as regras de progresso e os sistemas visíveis ao jogador em blocos modulares."
+            }
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "care-loop",
+    "id": "care",
     "section": "FEEDING",
-    "title": "Ciclo de Cuidado",
-    "vpetVersions": ["0.1"],
-    "content": {
-      "default": "A documentação futura vai explicar fome, humor, limpeza, saúde e como pequenas ações diárias moldam cada parceiro."
-    }
+    "title": "Cuidado",
+    "content": [
+      {
+        "type": "text",
+        "vpetVersions": ["0.1"],
+        "content": {
+          "default": "A documentação de cuidado explica as ações diárias que mantêm cada parceiro saudável e expressivo."
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "care-loop",
+        "title": "Ciclo de Cuidado",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": ["0.1"],
+            "content": {
+              "default": "A documentação futura vai explicar fome, humor, limpeza, saúde e como pequenas ações diárias moldam cada parceiro."
+            }
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "growth-paths",
+    "id": "evolution",
     "section": "EVOLUTION",
-    "title": "Rotas de Crescimento",
-    "vpetVersions": ["0.1"],
-    "content": {
-      "default": "As notas de evolução serão organizadas por ids estáveis para documentar mudanças de versão sem duplicar páginas inteiras."
-    }
+    "title": "Evolução",
+    "content": [
+      {
+        "type": "text",
+        "vpetVersions": ["0.1"],
+        "content": {
+          "default": "A documentação de evolução agrupa condições de crescimento e mudanças versionadas."
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "growth-paths",
+        "title": "Rotas de Crescimento",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": ["0.1"],
+            "content": {
+              "default": "As notas de evolução serão organizadas por ids estáveis para documentar mudanças de versão sem duplicar páginas inteiras."
+            }
+          }
+        ]
+      }
+    ]
   }
 ]

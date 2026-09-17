@@ -21,7 +21,13 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --font-body: Arial, Helvetica, sans-serif;
-  --font-display: "Trebuchet MS", Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-display-sm: 2rem;
+  --font-size-display-md: 2.75rem;
+  --font-size-display-lg: 4rem;
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;

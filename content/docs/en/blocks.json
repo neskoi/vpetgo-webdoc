@@ -1,29 +1,89 @@
 [
   {
-    "id": "getting-started",
+    "id": "core-mechanics",
     "section": "CORE_MECHANICS",
-    "title": "Getting Started",
-    "vpetVersions": ["0.1"],
-    "content": {
-      "default": "VPET GO documentation will describe the care loop, progression rules, and player-facing systems in modular guide blocks."
-    }
+    "title": "Core Mechanics",
+    "content": [
+      {
+        "type": "text",
+        "vpetVersions": ["0.1"],
+        "content": {
+          "default": "Core mechanics collect the systems that shape the basic VPET GO loop."
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "getting-started",
+        "title": "Getting Started",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": ["0.1"],
+            "content": {
+              "default": "VPET GO documentation will describe the care loop, progression rules, and player-facing systems in modular guide blocks."
+            }
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "care-loop",
+    "id": "care",
     "section": "FEEDING",
-    "title": "Care Loop",
-    "vpetVersions": ["0.1"],
-    "content": {
-      "default": "Future documentation will explain hunger, mood, cleaning, health, and how small daily actions shape each partner."
-    }
+    "title": "Care",
+    "content": [
+      {
+        "type": "text",
+        "vpetVersions": ["0.1"],
+        "content": {
+          "default": "Care documentation explains the daily actions that keep each partner healthy and expressive."
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "care-loop",
+        "title": "Care Loop",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": ["0.1"],
+            "content": {
+              "default": "Future documentation will explain hunger, mood, cleaning, health, and how small daily actions shape each partner."
+            }
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "growth-paths",
+    "id": "evolution",
     "section": "EVOLUTION",
-    "title": "Growth Paths",
-    "vpetVersions": ["0.1"],
-    "content": {
-      "default": "Evolution notes will be organized by stable block ids so version changes can be documented without duplicating full pages."
-    }
+    "title": "Evolution",
+    "content": [
+      {
+        "type": "text",
+        "vpetVersions": ["0.1"],
+        "content": {
+          "default": "Evolution documentation groups growth conditions and versioned changes."
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "growth-paths",
+        "title": "Growth Paths",
+        "content": [
+          {
+            "type": "text",
+            "vpetVersions": ["0.1"],
+            "content": {
+              "default": "Evolution notes will be organized by stable block ids so version changes can be documented without duplicating full pages."
+            }
+          }
+        ]
+      }
+    ]
   }
 ]
