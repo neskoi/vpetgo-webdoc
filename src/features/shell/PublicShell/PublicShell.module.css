@@ -19,14 +19,15 @@
 
 .logo {
   position: absolute;
-  bottom: var(--space-6);
-  left: var(--space-6);
+  bottom: clamp(var(--space-4), 4vw, var(--space-6));
+  left: clamp(var(--space-4), 4vw, var(--space-6));
   background-image: url("/assets/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 126px;
-  width: 420px;
+  aspect-ratio: 10 / 3;
+  height: auto;
+  width: clamp(13rem, 58vw, 26.25rem);
 }
 
 .header {

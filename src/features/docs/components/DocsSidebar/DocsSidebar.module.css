@@ -122,18 +122,22 @@
 @media (max-width: 760px) {
   .sidebar {
     background: transparent;
+    display: contents;
     padding: 0;
     position: static;
   }
 
   .menuButton {
     border-radius: 50%;
-    bottom: var(--space-4);
+    bottom: max(var(--space-4), env(safe-area-inset-bottom));
     display: inline-grid;
     height: 3.5rem;
     padding: 0;
+    left: auto;
+    margin: 0;
     position: fixed;
-    right: var(--space-4);
+    right: max(var(--space-4), env(safe-area-inset-right));
+    top: auto;
     width: 3.5rem;
     z-index: 30;
   }
