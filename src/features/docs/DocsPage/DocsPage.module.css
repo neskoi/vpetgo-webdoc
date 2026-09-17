@@ -94,13 +94,21 @@
 }
 
 @media (max-width: 760px) {
-  .hero h1,
+  .hero {
+    display: none;
+  }
+
   .sectionHeader h2 {
     font-size: var(--font-size-display-sm);
   }
 
-  .hero,
   .docsLayout {
+    gap: 0;
     grid-template-columns: 1fr;
+  }
+
+  .blocks {
+    gap: var(--space-3);
+    padding: var(--space-4);
   }
 }

@@ -60,6 +60,7 @@ function writeOpenSectionIds(locale: Locale, sectionIds: Set<string>) {
 
 export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, sections }: DocsSidebarProps) {
   const [openSectionIds, setOpenSectionIds] = useState<Set<string>>(() => collectExpandableNodeIds(sections));
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -90,6 +91,7 @@ export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, s
 
     if (renderableNode) {
       onSelectSection(renderableNode.id);
+      setIsMenuOpen(false);
     }
   }
 
@@ -135,7 +137,28 @@ export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, s
 
   return (
     <aside className={styles.sidebar}>
-      <nav aria-label={label}>{sections.map((section) => renderNode(section, 0))}</nav>
+      <button
+        aria-controls="docs-mobile-navigation"
+        aria-expanded={isMenuOpen}
+        aria-label={label}
+        className={styles.menuButton}
+        onClick={() => setIsMenuOpen((currentValue) => !currentValue)}
+        type="button"
+      >
+        <span className={styles.menuIcon} aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </span>
+      </button>
+      <nav
+        aria-label={label}
+        className={styles.nav}
+        data-open={isMenuOpen ? "true" : "false"}
+        id="docs-mobile-navigation"
+      >
+        {sections.map((section) => renderNode(section, 0))}
+      </nav>
     </aside>
   );
 }
