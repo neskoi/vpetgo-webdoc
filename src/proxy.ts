@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { defaultLocale, isSupportedLocale, resolvePreferredLocale } from "@/shared/i18n/locales";
 
 const PUBLIC_FILE = /\.(.*)$/;
+const VALID_LOCALIZED_PATHS = new Set(["", "docs", "about", "download"]);
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -17,6 +18,16 @@ export function proxy(request: NextRequest) {
   const firstSegment = pathname.split("/")[1];
 
   if (isSupportedLocale(firstSegment)) {
+    const localizedPath = pathname
+      .split("/")
+      .slice(2)
+      .filter(Boolean)
+      .join("/");
+
+    if (!VALID_LOCALIZED_PATHS.has(localizedPath)) {
+      return NextResponse.redirect(new URL("/docs", request.url));
+    }
+
     return NextResponse.next();
   }
 
