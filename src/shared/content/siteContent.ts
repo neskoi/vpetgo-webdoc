@@ -68,6 +68,22 @@ export function getRenderableDocNodes(locale: Locale): DocNode[] {
   return flattenDocNodes(getDocNodes(locale)).filter(hasDocContent);
 }
 
+export function findDocNodePath(nodes: DocNode[], nodeId: string): DocNode[] {
+  for (const node of nodes) {
+    if (node.id === nodeId) {
+      return [node];
+    }
+
+    const childPath = findDocNodePath(node.children ?? [], nodeId);
+
+    if (childPath.length) {
+      return [node, ...childPath];
+    }
+  }
+
+  return [];
+}
+
 export function findDocNode(locale: Locale, nodeId: string): DocNode | undefined {
   return flattenDocNodes(getDocNodes(locale)).find((node) => node.id === nodeId);
 }

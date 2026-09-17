@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/shared/ui/Badge";
 import { ImagePlaceholder } from "@/shared/ui/ImagePlaceholder";
-import { findDocNode, getDefaultDocSectionId, getDocSectionIds, getRenderableDocNodesFromSubtree, resolveDocNode, siteContent } from "@/shared/content/siteContent";
+import { findDocNode, findDocNodePath, getDefaultDocSectionId, getDocSectionIds, getRenderableDocNodesFromSubtree, resolveDocNode, siteContent } from "@/shared/content/siteContent";
 import type { Locale } from "@/shared/i18n/locales";
 import { DocArticleRenderer } from "../components/DocArticleRenderer";
 import { DocsSidebar } from "../components/DocsSidebar";
@@ -32,6 +32,7 @@ export function DocsPage({ locale }: DocsPageProps) {
   const validSectionIds = useMemo(() => getDocSectionIds(locale), [locale]);
   const [sectionId, setSectionId] = useState(defaultSectionId);
   const activeNode = findDocNode(locale, sectionId);
+  const activeNodePath = activeNode ? findDocNodePath(content.sections, activeNode.id) : [];
   const renderableNodes = activeNode ? getRenderableDocNodesFromSubtree(activeNode) : [];
 
   useEffect(() => {
@@ -97,6 +98,33 @@ export function DocsPage({ locale }: DocsPageProps) {
             <>
               <header className={styles.sectionHeader}>
                 <h2>{activeNode.title}</h2>
+                <nav aria-label={`${activeNode.title} breadcrumb`} className={styles.breadcrumb}>
+                  {activeNodePath.map((node, index) => {
+                    const separator = index < activeNodePath.length - 1 ? <span aria-hidden="true">{'>'}</span> : null;
+
+                    if (!node.content?.length) {
+                      return (
+                        <span className={styles.breadcrumbText} key={node.id}>
+                          {node.title}
+                          {separator}
+                        </span>
+                      );
+                    }
+
+                    return (
+                      <button
+                        aria-current={node.id === activeNode.id ? "page" : undefined}
+                        className={styles.breadcrumbItem}
+                        key={node.id}
+                        onClick={() => selectSection(node.id)}
+                        type="button"
+                      >
+                        {node.title}
+                        {separator}
+                      </button>
+                    );
+                  })}
+                </nav>
               </header>
               {renderableNodes.map((node, index) => (
                 <DocArticleRenderer
