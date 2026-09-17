@@ -1,11 +1,13 @@
 export type Section =
-  | "CORE_MECHANICS"
-  | "FEEDING"
-  | "EVOLUTION"
-  | "MINIGAMES"
-  | "CLEANING_HEALTH"
-  | "UI_INTERFACE"
-  | "HARDWARE_CONTROLS";
+  | "INFO"
+  | "CARE"
+  | "DIGIMON"
+  | "ONLINE"
+  | "STORE"
+  | "OPTIONS"
+  | "INTERACTION"
+  | "DEEP_SLEEP"
+  | "EXIT";
 
 export type VersionedText = {
   default: string;

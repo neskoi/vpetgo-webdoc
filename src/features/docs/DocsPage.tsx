@@ -11,7 +11,7 @@ type DocsPageProps = {
   sectionId: string;
 };
 
-const currentVersion = "0.1";
+const currentVersion = "1.7.0";
 const articleColors = [
   { bodyColor: "var(--color-sky-dark)", textColor: "var(--color-white)" },
   { bodyColor: "var(--color-purple)", textColor: "var(--color-white)" },
