@@ -1,12 +1,31 @@
 [
   {
+    "id": "instalacao-vpet-go",
+    "section": "INSTALLATION",
+    "title": "Instalação Vpet GO",
+    "content": [
+      {
+        "type": "text",
+        "vpetVersions": [
+          "1.7.0"
+        ],
+        "content": {
+          "default": "Installation notes for VPET GO will be documented here."
+        }
+      }
+    ],
+    "children": []
+  },
+  {
     "id": "info",
     "section": "INFO",
     "title": "Info",
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Info contains the device information screens."
         }
@@ -19,7 +38,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for status."
             }
@@ -32,22 +53,11 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for album."
-            }
-          }
-        ]
-      },
-      {
-        "id": "instalacao-vpet-go",
-        "title": "Instalação Vpet GO",
-        "content": [
-          {
-            "type": "text",
-            "vpetVersions": ["1.7.0"],
-            "content": {
-              "default": "Installation notes for VPET GO will be documented here."
             }
           }
         ]
@@ -61,7 +71,9 @@
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Care contains partner maintenance actions."
         }
@@ -74,7 +86,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Item."
             }
@@ -87,7 +101,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Sleep."
             }
@@ -100,7 +116,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Heal."
             }
@@ -113,7 +131,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Clean."
             }
@@ -126,7 +146,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Back."
             }
@@ -142,7 +164,9 @@
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Digimon contains training and battle entries."
         }
@@ -155,7 +179,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Training."
             }
@@ -168,7 +194,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Battle."
             }
@@ -181,7 +209,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Quest."
             }
@@ -194,7 +224,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Coliseum."
             }
@@ -207,7 +239,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Cable Link."
             }
@@ -220,7 +254,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for VS Bandai."
             }
@@ -233,7 +269,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Back."
             }
@@ -249,7 +287,9 @@
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Online contains connected features."
         }
@@ -262,7 +302,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Battle."
             }
@@ -275,7 +317,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Jogres."
             }
@@ -288,7 +332,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for trade."
             }
@@ -301,7 +347,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for nacastorage."
             }
@@ -314,7 +362,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for wificom."
             }
@@ -327,7 +377,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for back."
             }
@@ -343,7 +395,9 @@
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Documentation for Store."
         }
@@ -358,7 +412,9 @@
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Options contains device configuration entries."
         }
@@ -371,7 +427,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Brightness."
             }
@@ -384,7 +442,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Allways On."
             }
@@ -397,7 +457,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Background."
             }
@@ -410,7 +472,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Wifi."
             }
@@ -423,7 +487,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Battery Style."
             }
@@ -436,7 +502,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Sound Test."
             }
@@ -449,7 +517,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Back."
             }
@@ -465,7 +535,9 @@
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Interaction contains physical interaction systems."
         }
@@ -478,7 +550,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for XAI."
             }
@@ -491,7 +565,9 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": ["1.7.0"],
+            "vpetVersions": [
+              "1.7.0"
+            ],
             "content": {
               "default": "Documentation for Pendulum."
             }
@@ -507,7 +583,9 @@
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Documentation for Deep Sleep."
         }
@@ -522,7 +600,9 @@
     "content": [
       {
         "type": "text",
-        "vpetVersions": ["1.7.0"],
+        "vpetVersions": [
+          "1.7.0"
+        ],
         "content": {
           "default": "Documentation for Exit."
         }

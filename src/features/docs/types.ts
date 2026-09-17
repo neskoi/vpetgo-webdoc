@@ -1,4 +1,5 @@
 export type Section =
+  | "INSTALLATION"
   | "INFO"
   | "CARE"
   | "DIGIMON"
