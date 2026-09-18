@@ -34,8 +34,6 @@ export type FirmwareDelivery = {
   metadataHeaders: Record<string, string>;
 };
 
-const DEFAULT_LATEST_FILE_ID = "1P3Nallzwe7fPpBp1M-BZ-NH-3lgPLgDO";
-
 export function isFirmwareMode(value: string): value is FirmwareMode {
   return value === "light" || value === "full";
 }
@@ -74,9 +72,7 @@ export async function fetchFirmwareFromDrive(mode: FirmwareMode): Promise<Firmwa
 }
 
 async function fetchLatestRelease(): Promise<LatestReleaseManifest> {
-  const response = await fetchPublicDriveFile(
-    process.env.GOOGLE_DRIVE_FIRMWARE_LATEST_FILE_ID || DEFAULT_LATEST_FILE_ID
-  );
+  const response = await fetchPublicDriveFile(getLatestFileId());
   const latest = (await response.json()) as LatestReleaseManifest;
 
   if (
@@ -92,6 +88,18 @@ async function fetchLatestRelease(): Promise<LatestReleaseManifest> {
   }
 
   return latest;
+}
+
+function getLatestFileId(): string {
+  const fileId = process.env.GOOGLE_DRIVE_FIRMWARE_LATEST_FILE_ID?.trim();
+
+  if (!fileId) {
+    throw new Error(
+      "GOOGLE_DRIVE_FIRMWARE_LATEST_FILE_ID environment variable is required."
+    );
+  }
+
+  return fileId;
 }
 
 async function fetchLightManifest(fileId: string): Promise<LightFirmwareManifest> {
