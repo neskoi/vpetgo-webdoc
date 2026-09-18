@@ -1,0 +1,111 @@
+# ADR 002: Single Current Device Documentation
+
+## Status
+
+Accepted
+
+## Context
+
+VPET GO documentation is intended to help users operate the currently supported device firmware. Users are expected to update their devices and generally need accurate guidance for the current release rather than historical snapshots for older releases.
+
+ADR 001 introduced version-aware documentation blocks, version deltas, progressive fallback, and the possibility of version selectors and comparison indicators. That model adds data structures, resolution rules, component properties, and editorial overhead even though the product does not require users to browse old documentation versions.
+
+Repository history already preserves previous documentation. Release notes or a changelog can communicate historical changes without making historical versions part of the documentation runtime model.
+
+The site still needs to identify which device version its documentation describes. This value is deployment metadata and does not determine which content is rendered.
+
+## Decision
+
+The website will publish one living documentation version that always describes the current supported VPET GO device release.
+
+- Documentation content is replaced in place when device behavior changes.
+- The runtime content model does not store historical variants, version deltas, inheritance metadata, or fallback rules.
+- The UI does not provide a documentation version selector, version comparison, inherited-content indicators, or per-block change badges.
+- Every documentation block is rendered directly without device-version filtering.
+- Previous documentation remains available through Git history, not through the public documentation interface.
+- Historical release information, when needed, belongs in release notes or a changelog outside the documentation content model.
+- Locales remain separate and must describe the same current device behavior.
+
+The current device version is the only device-version value exposed by the documentation. It is presentation metadata and must not control content selection or rendering.
+
+The deployment must provide the version through the required server-side environment variable:
+
+```text
+VPETGO_CURRENT_DEVICE_VERSION
+```
+
+The value is treated as a non-empty display label. The application does not parse it, compare it as semantic versioning, or provide a hardcoded fallback. The localized docs route reads and validates it on the server, then passes it to the documentation page for display.
+
+## Content Model
+
+Documentation blocks contain their current content directly:
+
+```ts
+type DocTextBlock = {
+  type: "text";
+  content: string;
+};
+
+type DocImageBlock = {
+  type: "image";
+  alt: string;
+  caption?: string;
+  height?: number;
+  src: string;
+  width?: number;
+};
+
+type DocVideoBlock = {
+  type: "video";
+  src: string;
+  title: string;
+};
+
+type DocCustomBlock = {
+  type: "custom";
+  component: DocCustomComponentKey;
+  props?: Record<string, unknown>;
+};
+```
+
+Version-specific fields such as `vpetVersions`, `changes`, and maps of text by version are not part of the model.
+
+## Configuration Rules
+
+- `VPETGO_CURRENT_DEVICE_VERSION` is required for the documentation route.
+- Missing, empty, or whitespace-only values are configuration errors.
+- The value is read on the server and passed explicitly to the client documentation page.
+- The variable does not need a `NEXT_PUBLIC_` prefix because client code does not read the environment directly.
+- No source-code default may hide a missing deployment configuration.
+
+## Content Maintenance Rules
+
+When a new device version becomes current, maintainers must:
+
+1. Update each localized documentation file to describe the new current behavior.
+2. Update `VPETGO_CURRENT_DEVICE_VERSION` in the deployment configuration.
+3. Publish the documentation and version metadata together.
+
+Content updates and version metadata should be reviewed as one release change. The environment value identifies the documented release but is not a mechanism for retaining or selecting old content.
+
+## Consequences
+
+### Benefits
+
+- The content schema and renderer are substantially simpler.
+- Editors work with direct current content instead of version deltas and inheritance.
+- The application no longer compares version strings or resolves fallback content.
+- Obsolete documentation is not shipped to users.
+- The public interface is aligned with the expectation that devices should run the current release.
+- Git provides an existing audit trail for previous documentation states.
+
+### Trade-offs
+
+- The public site cannot display instructions for an older firmware release.
+- Users who remain on old firmware are directed by documentation for the current release.
+- Content changes and the deployment version value must be coordinated.
+- Historical communication requires separate release notes or a changelog if it becomes necessary.
+
+## Superseded Decision
+
+This ADR supersedes [ADR 001: Modular Versioned Documentation Structure](./001-doc-structure.md). Localization and modular documentation blocks remain valid architectural choices, but version deltas, progressive fallback, and historical documentation selection are discontinued.
