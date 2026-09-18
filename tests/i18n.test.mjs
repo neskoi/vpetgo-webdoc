@@ -17,7 +17,7 @@ test("locale configuration includes en and pt-BR with pt-BR fallback", () => {
 });
 
 test("public shell exposes the expected top-level navigation", () => {
-  assert.deepEqual(Object.keys(enContent.shell.navigation), ["docs", "download", "about"]);
+  assert.deepEqual(Object.keys(enContent.shell.navigation), ["docs", "download", "about", "update"]);
 });
 
 test("localized documentation navigation preserves stable ids", () => {

@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { supportedLocales, type Locale } from "@/shared/i18n/locales";
+import type { PublicSection } from "../PublicShell/PublicShell";
 import styles from "./LocaleSelect.module.css";
 
 type LocaleSelectProps = {
-  activeSection: "docs" | "download" | "about";
+  activeSection: PublicSection;
   label: string;
   locale: Locale;
 };
