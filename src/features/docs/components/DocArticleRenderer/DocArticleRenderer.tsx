@@ -7,7 +7,6 @@ type DocArticleRendererProps = {
   bodyColor: string;
   content: DocContentBlock[];
   contentId: string;
-  currentVersion: string;
   htmlId: string;
   textColor: string;
   title: string;
@@ -23,7 +22,6 @@ export function DocArticleRenderer({
   bodyColor,
   content,
   contentId,
-  currentVersion,
   htmlId,
   textColor,
   title
@@ -34,7 +32,6 @@ export function DocArticleRenderer({
     return (
       <CustomDocArticle
         content={content}
-        currentVersion={currentVersion}
         htmlId={htmlId}
         title={title}
       />
@@ -45,7 +42,6 @@ export function DocArticleRenderer({
     <DocArticle
       bodyColor={bodyColor}
       content={content}
-      currentVersion={currentVersion}
       id={htmlId}
       textColor={textColor}
       title={title}

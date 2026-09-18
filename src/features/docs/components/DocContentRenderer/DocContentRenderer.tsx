@@ -1,13 +1,7 @@
 import Image from "next/image";
 import type { ComponentType } from "react";
-import { resolveVersionedText } from "@/shared/content/siteContent";
-import type { DocContentBlock, DocCustomComponentKey, DocTextBlock } from "../../types";
+import type { DocContentBlock, DocCustomComponentKey } from "../../types";
 import styles from "./DocContentRenderer.module.css";
-
-type DocContentRendererProps = {
-  blocks: DocContentBlock[];
-  currentVersion: string;
-};
 
 type CustomDocComponentProps = {
   props?: Record<string, unknown>;
@@ -23,26 +17,18 @@ const customDocComponents: Record<DocCustomComponentKey, ComponentType<CustomDoc
   Placeholder: PlaceholderCustomBlock
 };
 
-function shouldRenderBlock(block: DocContentBlock, currentVersion: string): boolean {
-  if (!block.vpetVersions?.length) {
-    return true;
-  }
-
-  return block.vpetVersions.some((version) => version <= currentVersion);
-}
-
-function renderTextBlock(block: DocTextBlock, currentVersion: string) {
-  return <p>{resolveVersionedText(block, currentVersion)}</p>;
-}
-
-export function DocContentRenderer({ blocks, currentVersion }: DocContentRendererProps) {
+export function DocContentRenderer({ blocks }: { blocks: DocContentBlock[] }) {
   return (
     <>
-      {blocks.filter((block) => shouldRenderBlock(block, currentVersion)).map((block, index) => {
+      {blocks.map((block, index) => {
         const key = `${block.type}-${index}`;
 
         if (block.type === "text") {
-          return <div key={key}>{renderTextBlock(block, currentVersion)}</div>;
+          return (
+            <div key={key}>
+              <p>{block.content}</p>
+            </div>
+          );
         }
 
         if (block.type === "image") {

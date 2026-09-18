@@ -1,21 +1,11 @@
 export const defaultDocSectionId = "instalacao-vpet-go";
 
-export type VersionedText = {
-  default: string;
-  [version: string]: string;
-};
-
-type VersionedContent = {
-  vpetVersions?: string[];
-  changes?: Record<string, string>;
-};
-
-export type DocTextBlock = VersionedContent & {
+export type DocTextBlock = {
   type: "text";
-  content: VersionedText;
+  content: string;
 };
 
-export type DocImageBlock = VersionedContent & {
+export type DocImageBlock = {
   type: "image";
   alt: string;
   caption?: string;
@@ -24,7 +14,7 @@ export type DocImageBlock = VersionedContent & {
   width?: number;
 };
 
-export type DocVideoBlock = VersionedContent & {
+export type DocVideoBlock = {
   type: "video";
   src: string;
   title: string;
@@ -32,7 +22,7 @@ export type DocVideoBlock = VersionedContent & {
 
 export type DocCustomComponentKey = "Placeholder";
 
-export type DocCustomBlock = VersionedContent & {
+export type DocCustomBlock = {
   type: "custom";
   component: DocCustomComponentKey;
   props?: Record<string, unknown>;

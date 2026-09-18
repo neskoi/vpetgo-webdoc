@@ -3,7 +3,7 @@ import enDocsSections from "../../../content/docs/en/sections.json";
 import ptBrContent from "../../../content/pt-BR.json";
 import ptBrDocsSections from "../../../content/docs/pt-BR/sections.json";
 import type { Locale } from "@/shared/i18n/locales";
-import { defaultDocSectionId, type DocNode, type DocTextBlock } from "@/features/docs/types";
+import { defaultDocSectionId, type DocNode } from "@/features/docs/types";
 
 export const siteContent: Record<
   Locale,
@@ -100,16 +100,4 @@ export function getDefaultDocSectionId(locale: Locale): string {
 
 export function getDocSectionIds(locale: Locale): string[] {
   return getRenderableDocNodes(locale).map((node) => node.id);
-}
-
-export function resolveVersionedText(block: DocTextBlock, currentVersion: string): string {
-  if (block.content[currentVersion]) {
-    return block.content[currentVersion];
-  }
-
-  const previousVersion = [...(block.vpetVersions ?? [])]
-    .reverse()
-    .find((version) => version < currentVersion && block.content[version]);
-
-  return previousVersion ? block.content[previousVersion] : block.content.default;
 }

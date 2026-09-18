@@ -147,35 +147,35 @@ And they do not add version branches to documentation blocks.
 
 ## Implementation Checklist
 
-- [ ] Mark ADR 001 as superseded by ADR 002.
-- [ ] Add `VPETGO_CURRENT_DEVICE_VERSION` to `.env.example`.
-- [ ] Add a server-side reader for `VPETGO_CURRENT_DEVICE_VERSION`.
-- [ ] Reject a missing `VPETGO_CURRENT_DEVICE_VERSION`.
-- [ ] Reject an empty `VPETGO_CURRENT_DEVICE_VERSION`.
-- [ ] Reject a whitespace-only `VPETGO_CURRENT_DEVICE_VERSION`.
-- [ ] Pass `currentDeviceVersion` from the localized docs route to `DocsPage`.
-- [ ] Remove the hardcoded device version from `DocsPage`.
-- [ ] Display `currentDeviceVersion` as documentation metadata.
-- [ ] Remove `VersionedText` from documentation types.
-- [ ] Remove version-specific shared fields from documentation block types.
-- [ ] Change text block content to a direct string.
-- [ ] Remove the versioned text resolver.
-- [ ] Remove version-based block visibility logic.
-- [ ] Remove `currentVersion` from `DocContentRenderer`.
-- [ ] Remove `currentVersion` from documentation article components.
-- [ ] Render text block strings directly.
-- [ ] Migrate English documentation text blocks to direct strings.
-- [ ] Migrate Brazilian Portuguese documentation text blocks to direct strings.
-- [ ] Remove `vpetVersions` from all documentation content files.
-- [ ] Remove `changes` from all documentation content files.
-- [ ] Update obsolete ADR 001 references in project specifications.
-- [ ] Add a test for configured device version presentation.
-- [ ] Add a test for missing device version configuration.
-- [ ] Add a test for empty device version configuration.
-- [ ] Add a test proving blocks render without version filtering.
-- [ ] Add a test proving documentation content has no version-specific fields.
-- [ ] Run the test suite.
-- [ ] Run the production build.
+- [x] Mark ADR 001 as superseded by ADR 002.
+- [x] Add `VPETGO_CURRENT_DEVICE_VERSION` to `.env.example`.
+- [x] Add a server-side reader for `VPETGO_CURRENT_DEVICE_VERSION`.
+- [x] Reject a missing `VPETGO_CURRENT_DEVICE_VERSION`.
+- [x] Reject an empty `VPETGO_CURRENT_DEVICE_VERSION`.
+- [x] Reject a whitespace-only `VPETGO_CURRENT_DEVICE_VERSION`.
+- [x] Pass `currentDeviceVersion` from the localized docs route to `DocsPage`.
+- [x] Remove the hardcoded device version from `DocsPage`.
+- [x] Display `currentDeviceVersion` as documentation metadata.
+- [x] Remove `VersionedText` from documentation types.
+- [x] Remove version-specific shared fields from documentation block types.
+- [x] Change text block content to a direct string.
+- [x] Remove the versioned text resolver.
+- [x] Remove version-based block visibility logic.
+- [x] Remove `currentVersion` from `DocContentRenderer`.
+- [x] Remove `currentVersion` from documentation article components.
+- [x] Render text block strings directly.
+- [x] Migrate English documentation text blocks to direct strings.
+- [x] Migrate Brazilian Portuguese documentation text blocks to direct strings.
+- [x] Remove `vpetVersions` from all documentation content files.
+- [x] Remove `changes` from all documentation content files.
+- [x] Update obsolete ADR 001 references in project specifications.
+- [x] Add a test for configured device version presentation.
+- [x] Add a test for missing device version configuration.
+- [x] Add a test for empty device version configuration.
+- [x] Add a test proving blocks render without version filtering.
+- [x] Add a test proving documentation content has no version-specific fields.
+- [x] Run the test suite.
+- [x] Run the production build.
 
 ## Acceptance Criteria
 

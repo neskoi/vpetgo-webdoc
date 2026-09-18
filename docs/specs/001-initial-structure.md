@@ -2,7 +2,7 @@
 
 ## Context
 
-VPET GO needs a Next.js documentation website for a fan-made V-Pet/Tamagotchi-inspired project. The site must introduce the project, document its systems, and be ready to grow into the modular, version-aware documentation model described in [ADR 001 - Doc Structure](../adr/001-doc-structure.md).
+VPET GO needs a Next.js documentation website for a fan-made V-Pet/Tamagotchi-inspired project. The site must introduce the project, document its systems, and support the localized modular documentation structure. Its current-version content policy is defined by [ADR 002 - Single Current Device Documentation](../adr/002-single-current-device-documentation.md).
 
 The first release should focus on the public documentation shell, the design system foundation, internationalization, and the initial navigation surface. It does not need to include the full documentation dataset yet.
 
@@ -11,7 +11,7 @@ The first release should focus on the public documentation shell, the design sys
 - Create a Next.js application for the VPET GO documentation website.
 - Support multiple languages from the beginning through an i18n-ready routing and content structure.
 - Implement the initial public navigation with only the `Docs` and `About` tabs.
-- Follow the modular documentation structure defined by ADR 001, so future doc blocks can support version-specific content, inherited content, media, and change metadata.
+- Follow the modular current-content documentation structure defined by ADR 002, with localized text and media blocks that describe the supported device release.
 - Establish a design system with theme support.
 - Create a default theme inspired by the reference images in `local-docs`.
 - Provide a reusable `ImagePlaceholder` component for areas where decorative or gameplay images will be supplied later.
@@ -20,7 +20,7 @@ The first release should focus on the public documentation shell, the design sys
 ## Non-Goals
 
 - Do not implement the complete VPET GO documentation content in this slice.
-- Do not implement the full version selector, diff badges, or before/after media comparison from ADR 001 unless needed as a lightweight placeholder.
+- Do not implement historical documentation selection, version fallback, diff badges, or before/after version comparison.
 - Do not require final decorative assets; placeholders are acceptable for this initial slice.
 - Do not add private/authenticated areas.
 - Do not expose theme switching to users in this slice.
@@ -30,7 +30,7 @@ The first release should focus on the public documentation shell, the design sys
 
 ### Docs Tab
 
-The `Docs` tab is the main documentation entry point. For the initial slice, it should show a structured documentation layout that can later be populated with ADR 001 doc blocks.
+The `Docs` tab is the main documentation entry point. For the initial slice, it should show a structured documentation layout that can later be populated with current-content documentation blocks.
 
 It should include:
 
@@ -82,7 +82,7 @@ Requirements:
 - The first supported locales are `en` and `pt-BR`.
 - The default fallback locale is `pt-BR`.
 - Browser locale detection should prefer the closest supported locale.
-- Documentation block content must be stored in separate locale files, aligned with ADR 001.
+- Documentation block content must be stored in separate locale files, aligned with ADR 002.
 - The content structure must allow future documentation blocks to be localized independently from layout components.
 
 Suggested future documentation content structure:
@@ -146,7 +146,7 @@ Requirements:
 
 - Use vertical slice architecture for new application features.
 - Keep documentation pages, localized content, and components organized so each feature can evolve independently.
-- Align future documentation data with the modular doc block model in ADR 001.
+- Align future documentation data with the modular current-content block model in ADR 002.
 - Keep all code, identifiers, comments, and new documentation in English.
 
 ## Browser and Device Support
@@ -230,7 +230,7 @@ Then it includes the localized fan-made/non-affiliation disclaimer.
 - [ ] Implement the localized `Docs` page with sidebar navigation.
 - [ ] Add temporary sample documentation content for the initial Docs layout without requiring a visible placeholder label.
 - [ ] Implement the localized `About` page with the fan-made/non-affiliation disclaimer.
-- [ ] Prepare documentation content organization to align with ADR 001, using separate locale files for documentation blocks.
+- [ ] Prepare documentation content organization to align with ADR 002, using separate locale files for documentation blocks.
 - [ ] Ensure reference images are used only as visual inspiration.
 - [ ] Add tests or specs that verify routing, navigation visibility, localization, and placeholder rendering.
 - [ ] Verify responsive behavior in Chrome on desktop and smartphone-sized viewports.
@@ -245,7 +245,7 @@ Then it includes the localized fan-made/non-affiliation disclaimer.
 - The first supported locales are `en` and `pt-BR`.
 - The `Docs` page includes sidebar navigation and temporary sample content.
 - The `About` page and footer include the localized fan-made/non-affiliation disclaimer.
-- The selected architecture can later support ADR 001 modular documentation blocks.
+- The selected architecture supports ADR 002 modular current-content documentation blocks.
 - Future documentation blocks can be stored in separate locale files while preserving stable block ids.
 - The default theme visibly reflects the provided VPET GO guide references.
 - Temporary visual areas use a reusable image placeholder component.

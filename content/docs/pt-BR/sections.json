@@ -9,39 +9,19 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "VPET GO é um virtual pet colorido de Digimon feito por fãs, usando hardware acessível e software próprio em C++. A gravação do dispositivo é feita pelo ESPConnect com o arquivo de firmware distribuído pelos canais de release do projeto."
-            }
+            "content": "VPET GO é um virtual pet colorido de Digimon feito por fãs, usando hardware acessível e software próprio em C++. A gravação do dispositivo é feita pelo ESPConnect com o arquivo de firmware distribuído pelos canais de release do projeto."
           },
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Antes de gravar, baixe e extraia o pacote de firmware mais recente. Se o pacote incluir rede.txt, edite o arquivo com o nome da rede Wi-Fi na primeira linha e a senha na segunda; esse arquivo é opcional, exceto para usar recursos online."
-            }
+            "content": "Antes de gravar, baixe e extraia o pacote de firmware mais recente. Se o pacote incluir rede.txt, edite o arquivo com o nome da rede Wi-Fi na primeira linha e a senha na segunda; esse arquivo é opcional, exceto para usar recursos online."
           },
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "No ESPConnect, defina o baud rate como 2000000, conecte o dispositivo por USB, abra Flash Tools, baixe um backup da flash, selecione o .bin do firmware com offset 0x0 e faça a gravação. Se a conexão ficar instável, reduza o baud rate até funcionar."
-            }
+            "content": "No ESPConnect, defina o baud rate como 2000000, conecte o dispositivo por USB, abra Flash Tools, baixe um backup da flash, selecione o .bin do firmware com offset 0x0 e faça a gravação. Se a conexão ficar instável, reduza o baud rate até funcionar."
           },
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Para adicionar rede.txt, abra LittleFS Tools, crie um backup da partição, envie rede.txt para a raiz do sistema de arquivos, salve a partição de volta na flash, desconecte e reinicie o dispositivo. Na primeira inicialização, a tela mostra CONTINUE ou NEW DIGIMON."
-            }
+            "content": "Para adicionar rede.txt, abra LittleFS Tools, crie um backup da partição, envie rede.txt para a raiz do sistema de arquivos, salve a partição de volta na flash, desconecte e reinicie o dispositivo. Na primeira inicialização, a tela mostra CONTINUE ou NEW DIGIMON."
           }
         ]
       }
@@ -57,12 +37,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Info reúne as telas principais de status do Digimon ativo, incluindo espécie, poder, nível, histórico de batalhas, atributos de cuidado, dica de evolução, tipo, experiência, bateria, idade e peso."
-            }
+            "content": "Info reúne as telas principais de status do Digimon ativo, incluindo espécie, poder, nível, histórico de batalhas, atributos de cuidado, dica de evolução, tipo, experiência, bateria, idade e peso."
           }
         ],
         "children": [
@@ -72,48 +47,23 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Status agora é uma composição de seis telas sequenciais. Juntas, elas mostram nome do Digimon, Stage, Type, próxima evolução provável (Next), Battles, Win Rate, Hunger, Strength, Effort, Age, Level, EXP, Power, timer de evolução, Mistakes e Weight."
-                }
+                "content": "Status agora é uma composição de seis telas sequenciais. Juntas, elas mostram nome do Digimon, Stage, Type, próxima evolução provável (Next), Battles, Win Rate, Hunger, Strength, Effort, Age, Level, EXP, Power, timer de evolução, Mistakes e Weight."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Nome identifica a espécie do Digimon. Stage mostra o estágio atual. Type segue as regras de vantagem entre Virus, Vaccine, Data e Free. Next indica a evolução mais provável com base nas condições atuais."
-                }
+                "content": "Nome identifica a espécie do Digimon. Stage mostra o estágio atual. Type segue as regras de vantagem entre Virus, Vaccine, Data e Free. Next indica a evolução mais provável com base nas condições atuais."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Battles registra as lutas durante a vida do Digimon, enquanto Win Rate mostra a porcentagem de vitórias. Hunger e Strength caem naturalmente com o tempo e depois de batalhas, e podem gerar care mistakes se ficarem em 0 por tempo demais."
-                }
+                "content": "Battles registra as lutas durante a vida do Digimon, enquanto Win Rate mostra a porcentagem de vitórias. Hunger e Strength caem naturalmente com o tempo e depois de batalhas, e podem gerar care mistakes se ficarem em 0 por tempo demais."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Effort aumenta com Training e pode influenciar evolução. Age, Level, EXP e Power descrevem crescimento e prontidão para batalha; o nível pode afetar evolução e poder, com Stage I limitado ao nível 1, Stage II ao 3, Stage III ao 4, Stage IV ao 6, Stage V ao 8 e Stage VI ao 10."
-                }
+                "content": "Effort aumenta com Training e pode influenciar evolução. Age, Level, EXP e Power descrevem crescimento e prontidão para batalha; o nível pode afetar evolução e poder, com Stage I limitado ao nível 1, Stage II ao 3, Stage III ao 4, Stage IV ao 6, Stage V ao 8 e Stage VI ao 10."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "O timer de evolução acompanha o progresso até a próxima evolução. Mistakes conta os erros de cuidado no Stage atual. Weight é medido em GB, aumenta ao comer, diminui em luta ou treino, e Weight alto demais pode causar sickness."
-                }
+                "content": "O timer de evolução acompanha o progresso até a próxima evolução. Mistakes conta os erros de cuidado no Stage atual. Weight é medido em GB, aumenta ao comer, diminui em luta ou treino, e Weight alto demais pode causar sickness."
               }
             ]
           },
@@ -123,12 +73,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Album mostra um catálogo de todos os Digimon de um determinado Digi-Egg. Use A para seguir entre as páginas, B para selecionar um Digimon e inspecionar seus detalhes, e A+B para sair do Album."
-                }
+                "content": "Album mostra um catálogo de todos os Digimon de um determinado Digi-Egg. Use A para seguir entre as páginas, B para selecionar um Digimon e inspecionar seus detalhes, e A+B para sair do Album."
               }
             ]
           }
@@ -140,12 +85,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Care cobre a manutenção diária: alimentação, sono, cura e limpeza. Cuidado perdido pode gerar erros, doença ou ferimento, e essas condições podem influenciar o crescimento."
-            }
+            "content": "Care cobre a manutenção diária: alimentação, sono, cura e limpeza. Cuidado perdido pode gerar erros, doença ou ferimento, e essas condições podem influenciar o crescimento."
           }
         ],
         "children": [
@@ -155,30 +95,15 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Meat preenche os corações de Hunger do Digimon e é um recurso infinito."
-                }
+                "content": "Meat preenche os corações de Hunger do Digimon e é um recurso infinito."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Protein preenche os corações de Strength do Digimon e é um recurso ilimitado. Também aumenta o Weight do Digimon."
-                }
+                "content": "Protein preenche os corações de Strength do Digimon e é um recurso ilimitado. Também aumenta o Weight do Digimon."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Existem mais itens com efeitos diversos."
-                }
+                "content": "Existem mais itens com efeitos diversos."
               }
             ]
           },
@@ -188,21 +113,11 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Coloque o Digimon para dormir quando ele estiver cansado para evitar erros de cuidado. A maioria dos recursos fica indisponível durante o sono. Se a luz for apagada e ele continuar acordado, provavelmente ainda não está cansado."
-                }
+                "content": "Coloque o Digimon para dormir quando ele estiver cansado para evitar erros de cuidado. A maioria dos recursos fica indisponível durante o sono. Se a luz for apagada e ele continuar acordado, provavelmente ainda não está cansado."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "O sono normal não pausa o timer de evolução. Deep Sleep coloca o próprio dispositivo em repouso e pausa o timer de evolução, enquanto o relógio do sistema continua."
-                }
+                "content": "O sono normal não pausa o timer de evolução. Deep Sleep coloca o próprio dispositivo em repouso e pausa o timer de evolução, enquanto o relógio do sistema continua."
               }
             ]
           },
@@ -212,12 +127,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Heal remove condições de doença e ferimento. Um Digimon pode ficar doente por excesso de peso ou acúmulo de poop, e pode se ferir ao perder uma luta."
-                }
+                "content": "Heal remove condições de doença e ferimento. Um Digimon pode ficar doente por excesso de peso ou acúmulo de poop, e pode se ferir ao perder uma luta."
               }
             ]
           },
@@ -227,12 +137,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Clean remove poop da tela principal. Deixar poop acumular pode fazer seu Digimon ficar doente."
-                }
+                "content": "Clean remove poop da tela principal. Deixar poop acumular pode fazer seu Digimon ficar doente."
               }
             ]
           }
@@ -244,12 +149,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "O menu Digimon reúne treino, batalha, quest, coliseum, batalha por cabo, batalha com dispositivos Bandai, jogress, backup e ações online."
-            }
+            "content": "O menu Digimon reúne treino, batalha, quest, coliseum, batalha por cabo, batalha com dispositivos Bandai, jogress, backup e ações online."
           }
         ],
         "children": [
@@ -259,21 +159,11 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Training aumenta corações de Strength, e persistir nos treinos também aumenta corações de Effort. Ao se exercitar, o Digimon perde Weight."
-                }
+                "content": "Training aumenta corações de Strength, e persistir nos treinos também aumenta corações de Effort. Ao se exercitar, o Digimon perde Weight."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Acertar o minigame de Training faz com que ele seja mais efetivo e te recompense com mais corações de Strength."
-                }
+                "content": "Acertar o minigame de Training faz com que ele seja mais efetivo e te recompense com mais corações de Strength."
               }
             ]
           },
@@ -283,12 +173,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "As opções de batalha incluem Quest, Colosseum, Cable Link e VS Bandai. Quest avança áreas por conjuntos de lutas, enquanto Colosseum executa uma sequência de lutas contra Digimon."
-                }
+                "content": "As opções de batalha incluem Quest, Colosseum, Cable Link e VS Bandai. Quest avança áreas por conjuntos de lutas, enquanto Colosseum executa uma sequência de lutas contra Digimon."
               }
             ],
             "children": [
@@ -298,21 +183,11 @@
                 "content": [
                   {
                     "type": "text",
-                    "vpetVersions": [
-                      "1.7.0"
-                    ],
-                    "content": {
-                      "default": "Quest tem 50 áreas diferentes. Cada área contém 3 batalhas, e a terceira batalha é sempre contra um boss."
-                    }
+                    "content": "Quest tem 50 áreas diferentes. Cada área contém 3 batalhas, e a terceira batalha é sempre contra um boss."
                   },
                   {
                     "type": "text",
-                    "vpetVersions": [
-                      "1.7.0"
-                    ],
-                    "content": {
-                      "default": "O modo Quest pode recompensar o jogador com items."
-                    }
+                    "content": "O modo Quest pode recompensar o jogador com items."
                   }
                 ]
               },
@@ -322,12 +197,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "vpetVersions": [
-                      "1.7.0"
-                    ],
-                    "content": {
-                      "default": "Coliseum mode executa uma sequência de lutas contra Digimon. A versão 0.2a corrigiu um bug de seleção para permitir oponentes de Baby II até Ultimate."
-                    }
+                    "content": "Coliseum mode executa uma sequência de lutas contra Digimon. A versão 0.2a corrigiu um bug de seleção para permitir oponentes de Baby II até Ultimate."
                   }
                 ]
               },
@@ -337,12 +207,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "vpetVersions": [
-                      "1.7.0"
-                    ],
-                    "content": {
-                      "default": "Cable Link conecta fisicamente com outro dispositivo VPET GO para batalhas."
-                    }
+                    "content": "Cable Link conecta fisicamente com outro dispositivo VPET GO para batalhas."
                   }
                 ]
               },
@@ -352,12 +217,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "vpetVersions": [
-                      "1.7.0"
-                    ],
-                    "content": {
-                      "default": "VS Bandai conecta com dispositivos Bandai para batalhas."
-                    }
+                    "content": "VS Bandai conecta com dispositivos Bandai para batalhas."
                   }
                 ]
               }
@@ -371,12 +231,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Online são recursos multiplayer que podem ser utilizados com qualquer outro Tamer que tenha um VPET GO, de qualquer lugar do mundo. O único pré-requisito é ter uma conexão Wi-Fi."
-            }
+            "content": "Online são recursos multiplayer que podem ser utilizados com qualquer outro Tamer que tenha um VPET GO, de qualquer lugar do mundo. O único pré-requisito é ter uma conexão Wi-Fi."
           }
         ],
         "children": [
@@ -386,39 +241,19 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Online Battle te permite batalhar contra outros Tamers. Ao selecionar, você precisa fazer o minigame da Interaction selecionada; depois disso, poderá escolher entre Create Room ou Enter Room."
-                }
+                "content": "Online Battle te permite batalhar contra outros Tamers. Ao selecionar, você precisa fazer o minigame da Interaction selecionada; depois disso, poderá escolher entre Create Room ou Enter Room."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Create Room mostra um número de quatro dígitos que você deve passar para a pessoa contra quem quer lutar."
-                }
+                "content": "Create Room mostra um número de quatro dígitos que você deve passar para a pessoa contra quem quer lutar."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Enter Room pede para inserir o número de quatro dígitos obtido de outro Tamer. Use A para mudar o valor do dígito e B para confirmar e passar para o seguinte até ter preenchido os quatro."
-                }
+                "content": "Enter Room pede para inserir o número de quatro dígitos obtido de outro Tamer. Use A para mudar o valor do dígito e B para confirmar e passar para o seguinte até ter preenchido os quatro."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Se tudo for feito corretamente, o combate vai iniciar em um instante."
-                }
+                "content": "Se tudo for feito corretamente, o combate vai iniciar em um instante."
               }
             ]
           },
@@ -428,48 +263,23 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Online Jogress te permite conectar com outro Tamer para fazer uma Jogress. O fluxo é parecido com Online Battle, mas não tem minigame de Interaction."
-                }
+                "content": "Online Jogress te permite conectar com outro Tamer para fazer uma Jogress. O fluxo é parecido com Online Battle, mas não tem minigame de Interaction."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Ao selecionar, escolha entre Create Room e Enter Room."
-                }
+                "content": "Ao selecionar, escolha entre Create Room e Enter Room."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Create Room mostra um número de quatro dígitos que você deve passar para a pessoa com quem quer fazer Jogress."
-                }
+                "content": "Create Room mostra um número de quatro dígitos que você deve passar para a pessoa com quem quer fazer Jogress."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Enter Room pede para inserir o número de quatro dígitos obtido de outro Tamer. Use A para mudar o valor do dígito e B para confirmar e passar para o seguinte até ter preenchido os quatro."
-                }
+                "content": "Enter Room pede para inserir o número de quatro dígitos obtido de outro Tamer. Use A para mudar o valor do dígito e B para confirmar e passar para o seguinte até ter preenchido os quatro."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Se tudo for feito corretamente e os Digimon forem compatíveis, eles fazem uma Jogress em vez de uma luta."
-                }
+                "content": "Se tudo for feito corretamente e os Digimon forem compatíveis, eles fazem uma Jogress em vez de uma luta."
               }
             ]
           },
@@ -479,48 +289,23 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Online Trade permite que dois Tamers troquem seus Digimon ativos um com o outro. O fluxo é igual ao Online Jogress, mas em vez de uma Jogress, os Tamers trocam os Digimon ativos."
-                }
+                "content": "Online Trade permite que dois Tamers troquem seus Digimon ativos um com o outro. O fluxo é igual ao Online Jogress, mas em vez de uma Jogress, os Tamers trocam os Digimon ativos."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Ao selecionar, escolha entre Create Room e Enter Room."
-                }
+                "content": "Ao selecionar, escolha entre Create Room e Enter Room."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Create Room mostra um número de quatro dígitos que você deve passar para a pessoa com quem quer trocar."
-                }
+                "content": "Create Room mostra um número de quatro dígitos que você deve passar para a pessoa com quem quer trocar."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Enter Room pede para inserir o número de quatro dígitos obtido de outro Tamer. Use A para mudar o valor do dígito e B para confirmar e passar para o seguinte até ter preenchido os quatro."
-                }
+                "content": "Enter Room pede para inserir o número de quatro dígitos obtido de outro Tamer. Use A para mudar o valor do dígito e B para confirmar e passar para o seguinte até ter preenchido os quatro."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Se tudo for feito corretamente, os dois Tamers trocam seus Digimon ativos um com o outro."
-                }
+                "content": "Se tudo for feito corretamente, os dois Tamers trocam seus Digimon ativos um com o outro."
               }
             ]
           },
@@ -530,21 +315,11 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "NacaStorage possui as opções Naca Upload e Naca Download, que permitem fazer upload e download de Digimon pelo site da NacaTech em https://battle.nacatech.es/."
-                }
+                "content": "NacaStorage possui as opções Naca Upload e Naca Download, que permitem fazer upload e download de Digimon pelo site da NacaTech em https://battle.nacatech.es/."
               },
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Naca Upload envia seu Digimon ativo do dispositivo para o NacaStorage. Naca Download envia um Digimon compatível do NacaStorage de volta para o VPET GO."
-                }
+                "content": "Naca Upload envia seu Digimon ativo do dispositivo para o NacaStorage. Naca Download envia um Digimon compatível do NacaStorage de volta para o VPET GO."
               }
             ]
           }
@@ -556,21 +331,11 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Store permite comprar itens ou Digi-Eggs com os Bits adquiridos. Pressione A para passar pelos itens disponíveis e B para selecionar."
-            }
+            "content": "Store permite comprar itens ou Digi-Eggs com os Bits adquiridos. Pressione A para passar pelos itens disponíveis e B para selecionar."
           },
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Pressione e segure A para sair da Store."
-            }
+            "content": "Pressione e segure A para sair da Store."
           }
         ]
       },
@@ -580,12 +345,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Options inclui brilho, comportamento de tela sempre ligada, escolha de background, modo de interaction e Deep Sleep."
-            }
+            "content": "Options inclui brilho, comportamento de tela sempre ligada, escolha de background, modo de interaction e Deep Sleep."
           }
         ],
         "children": [
@@ -595,12 +355,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Brightness ajusta o brilho da tela."
-                }
+                "content": "Brightness ajusta o brilho da tela."
               }
             ]
           },
@@ -610,12 +365,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Always On define se a tela fica sempre ligada ou se desliga periodicamente."
-                }
+                "content": "Always On define se a tela fica sempre ligada ou se desliga periodicamente."
               }
             ]
           },
@@ -625,12 +375,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Background define o fundo exibido atrás do seu Digimon."
-                }
+                "content": "Background define o fundo exibido atrás do seu Digimon."
               }
             ]
           },
@@ -640,12 +385,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Wi-Fi contém as opções de rede do dispositivo: Quick Connect, Saved Networks e Wi-Fi Off."
-                }
+                "content": "Wi-Fi contém as opções de rede do dispositivo: Quick Connect, Saved Networks e Wi-Fi Off."
               }
             ],
             "children": [
@@ -655,12 +395,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "vpetVersions": [
-                      "1.7.0"
-                    ],
-                    "content": {
-                      "default": "Quick Connect mostra um QR Code para você conectar seu celular no VPET GO e então configurar a sua rede Wi-Fi."
-                    }
+                    "content": "Quick Connect mostra um QR Code para você conectar seu celular no VPET GO e então configurar a sua rede Wi-Fi."
                   }
                 ]
               },
@@ -670,12 +405,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "vpetVersions": [
-                      "1.7.0"
-                    ],
-                    "content": {
-                      "default": "Saved Networks mostra os Wi-Fi configurados. O dispositivo pode salvar até 5 redes por vez e alternar entre elas."
-                    }
+                    "content": "Saved Networks mostra os Wi-Fi configurados. O dispositivo pode salvar até 5 redes por vez e alternar entre elas."
                   }
                 ]
               },
@@ -685,12 +415,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "vpetVersions": [
-                      "1.7.0"
-                    ],
-                    "content": {
-                      "default": "Wi-Fi Off desliga o Wi-Fi."
-                    }
+                    "content": "Wi-Fi Off desliga o Wi-Fi."
                   }
                 ]
               }
@@ -702,12 +427,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Battery Style é um menu que permite escolher entre 16 modelos de mostrador de bateria."
-                }
+                "content": "Battery Style é um menu que permite escolher entre 16 modelos de mostrador de bateria."
               }
             ]
           },
@@ -717,12 +437,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Sound Test permite reproduzir os sons utilizados pelo VPET GO."
-                }
+                "content": "Sound Test permite reproduzir os sons utilizados pelo VPET GO."
               }
             ]
           }
@@ -734,12 +449,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Interaction define o estilo de entrada usado em treino e batalhas."
-            }
+            "content": "Interaction define o estilo de entrada usado em treino e batalhas."
           }
         ],
         "children": [
@@ -749,12 +459,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "XAI rola um dado de 7 lados antes da batalha para definir a velocidade da barra. Números menores deixam a barra mais rápida; pressione B para parar a seta no ponto mais alto. Os padrões da barra podem variar por Digimon."
-                }
+                "content": "XAI rola um dado de 7 lados antes da batalha para definir a velocidade da barra. Números menores deixam a barra mais rápida; pressione B para parar a seta no ponto mais alto. Os padrões da barra podem variar por Digimon."
               }
             ]
           },
@@ -764,12 +469,7 @@
             "content": [
               {
                 "type": "text",
-                "vpetVersions": [
-                  "1.7.0"
-                ],
-                "content": {
-                  "default": "Pendulum pede para chacoalhar o dispositivo até a cor da tela mudar: azul para 2-6 movimentos, amarelo para 7-11 e vermelho para 12 ou mais. As cores de Megahit variam por Digimon e são indicadas pela tela Ready."
-                }
+                "content": "Pendulum pede para chacoalhar o dispositivo até a cor da tela mudar: azul para 2-6 movimentos, amarelo para 7-11 e vermelho para 12 ou mais. As cores de Megahit variam por Digimon e são indicadas pela tela Ready."
               }
             ]
           }
@@ -781,12 +481,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Deep Sleep coloca o próprio dispositivo em repouso e pausa o timer de evolução, enquanto o relógio do sistema continua. Desde a versão 0.2a, ele permanece em Deep Sleep até a saída manual pressionando B."
-            }
+            "content": "Deep Sleep coloca o próprio dispositivo em repouso e pausa o timer de evolução, enquanto o relógio do sistema continua. Desde a versão 0.2a, ele permanece em Deep Sleep até a saída manual pressionando B."
           }
         ]
       },
@@ -796,12 +491,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Exit fecha o menu atual ou retorna para a tela anterior."
-            }
+            "content": "Exit fecha o menu atual ou retorna para a tela anterior."
           }
         ]
       },
@@ -811,12 +501,7 @@
         "content": [
           {
             "type": "text",
-            "vpetVersions": [
-              "1.7.0"
-            ],
-            "content": {
-              "default": "Back retorna do menu atual."
-            }
+            "content": "Back retorna do menu atual."
           }
         ]
       }
