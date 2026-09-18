@@ -7,7 +7,8 @@
     "navigation": {
       "docs": "Docs",
       "download": "Download",
-      "about": "About"
+      "about": "About",
+      "update": "Update"
     },
     "footer": {
       "disclaimer": "Non-profit fan project."
@@ -37,5 +38,47 @@
     "disclaimer": "Non-profit fan project.",
     "imageAlt": "Temporary gameplay image area for VPET GO",
     "imageCaption": "Future gameplay and guide artwork will live here."
+  },
+  "updater": {
+    "badge": "USB firmware update",
+    "title": "Update VPET GO",
+    "description": "Connect your VPET GO by USB, select its serial port, then choose Light or Full update.",
+    "browserNote": "Requires desktop Chrome or Edge with Web Serial support.",
+    "panel": {
+      "portTitle": "USB port",
+      "selectPort": "Select VPET GO",
+      "changePort": "Change port",
+      "noDevice": "No VPET GO selected",
+      "connected": "VPET GO connected",
+      "deviceLabel": "Detected device",
+      "lightTitle": "Light Update",
+      "lightDescription": "Updates only the VPET GO application and keeps LittleFS data, saves, settings and content.",
+      "fullTitle": "Full Update",
+      "fullDescription": "Uses the official VPGo Full package: validates every component, clears NVS and LittleFS, then reinstalls bootloader, partitions, firmware and LittleFS content.",
+      "lightAction": "Light Update",
+      "fullAction": "Full Update",
+      "fullConfirmation": "Full Update reinstalls the complete VPET GO and can erase saved data. Continue?",
+      "progressLabel": "Firmware update progress",
+      "status": {
+        "idle": "Select the VPET GO USB port to begin.",
+        "connecting": "Connecting to VPET GO...",
+        "ready": "Ready to update.",
+        "downloading": "Preparing firmware...",
+        "flashing": "Updating VPET GO...",
+        "finishing": "Finishing update...",
+        "complete": "Update complete. VPET GO has restarted.",
+        "validating": "Validating firmware package...",
+        "erasing": "Preparing VPET GO storage..."
+      },
+      "errors": {
+        "unsupportedBrowser": "Web Serial is not available in this browser. Use desktop Chrome or Edge.",
+        "wrongChip": "The selected device is not a VPET GO compatible ESP32.",
+        "wrongFlashSize": "The selected ESP32 does not have the 16 MB flash expected by VPET GO.",
+        "connectionFailed": "Could not connect to the selected device. Reconnect the USB cable and try again.",
+        "firmwareUnavailable": "The firmware is temporarily unavailable. Please try again later.",
+        "updateFailed": "The update did not complete. Keep the VPET GO connected and try again.",
+        "invalidFirmware": "The firmware package failed validation and was not installed."
+      }
+    }
   }
 }

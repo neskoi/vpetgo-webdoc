@@ -6,10 +6,12 @@ import { LocaleSelect } from "../LocaleSelect";
 import { ThemeToggle } from "../ThemeToggle";
 import styles from "./PublicShell.module.css";
 
+export type PublicSection = "docs" | "download" | "update" | "about";
+
 type PublicShellProps = {
   children: React.ReactNode;
   locale: Locale;
-  activeSection: "docs" | "download" | "about";
+  activeSection: PublicSection;
 };
 
 export function PublicShell({ children, locale, activeSection }: PublicShellProps) {
@@ -37,6 +39,13 @@ export function PublicShell({ children, locale, activeSection }: PublicShellProp
             href={`/${locale}/download`}
           >
             {content.navigation.download}
+          </Link>
+          <Link
+            aria-current={activeSection === "update" ? "page" : undefined}
+            className={styles.navLink}
+            href={`/${locale}/update`}
+          >
+            {content.navigation.update}
           </Link>
           <Link
             aria-current={activeSection === "about" ? "page" : undefined}

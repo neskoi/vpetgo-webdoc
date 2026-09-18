@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { defaultLocale, isSupportedLocale, resolvePreferredLocale } from "@/shared/i18n/locales";
 
 const PUBLIC_FILE = /\.(.*)$/;
-const VALID_LOCALIZED_PATHS = new Set(["docs", "about", "download"]);
+const VALID_LOCALIZED_PATHS = new Set(["docs", "about", "download", "update"]);
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;

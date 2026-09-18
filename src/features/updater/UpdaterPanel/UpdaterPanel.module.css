@@ -1,0 +1,161 @@
+.panel {
+  background: var(--color-surface);
+  border: var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-pixel);
+  display: grid;
+  gap: var(--space-5);
+  padding: clamp(var(--space-4), 4vw, var(--space-6));
+}
+
+.portSection {
+  align-items: center;
+  background: var(--color-page);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+  padding: var(--space-4);
+}
+
+.portSection > div {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.kicker {
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.deviceState {
+  font-size: var(--font-size-lg);
+}
+
+.deviceDetails {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+.portButton,
+.lightButton,
+.fullButton {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 3px 3px 0 var(--color-border);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  padding: var(--space-3) var(--space-4);
+}
+
+.portButton {
+  background: var(--color-sky-dark);
+}
+
+.lightButton {
+  background: var(--color-green);
+  color: var(--color-ink);
+}
+
+.fullButton {
+  background: var(--color-pink);
+}
+
+.portButton:hover:not(:disabled),
+.lightButton:hover:not(:disabled),
+.fullButton:hover:not(:disabled) {
+  transform: translate(1px, 1px);
+}
+
+.portButton:disabled,
+.lightButton:disabled,
+.fullButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.updateGrid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.updateCard {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-content: space-between;
+  min-height: 13rem;
+  padding: var(--space-4);
+}
+
+.updateCard h2 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  margin: 0 0 var(--space-3);
+}
+
+.updateCard p {
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.error {
+  background: #fff0f0;
+  border: 2px solid #d64242;
+  border-radius: var(--radius-sm);
+  color: #812020;
+  font-weight: 800;
+  margin: 0;
+  padding: var(--space-3);
+}
+
+.progressSection {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.progressHeader {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: space-between;
+}
+
+.progressTrack {
+  background: var(--color-page);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  height: 1.35rem;
+  overflow: hidden;
+}
+
+.progressFill {
+  background: var(--color-cyan);
+  height: 100%;
+  min-width: 0;
+  transition: width 120ms linear;
+}
+
+@media (max-width: 720px) {
+  .portSection {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .portButton {
+    width: 100%;
+  }
+
+  .updateGrid {
+    grid-template-columns: 1fr;
+  }
+}
