@@ -1,15 +1,13 @@
-import type { DocContentBlock } from "../../types";
 import { DocContentRenderer } from "../DocContentRenderer";
 import styles from "./ItemDocArticle.module.css";
 
 type ItemDocArticleProps = {
-  content: DocContentBlock[];
-  currentVersion: string;
+  content: string[];
   htmlId: string;
   title: string;
 };
 
-export function ItemDocArticle({ content, currentVersion, htmlId, title }: ItemDocArticleProps) {
+export function ItemDocArticle({ content, htmlId, title }: ItemDocArticleProps) {
   return (
     <article className={styles.article} id={htmlId}>
       <header className={styles.header}>
@@ -17,7 +15,7 @@ export function ItemDocArticle({ content, currentVersion, htmlId, title }: ItemD
         <h2>{title}</h2>
       </header>
       <div className={styles.body}>
-        <DocContentRenderer blocks={content} currentVersion={currentVersion} />
+        <DocContentRenderer paragraphs={content} />
       </div>
     </article>
   );
