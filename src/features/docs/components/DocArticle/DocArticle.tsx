@@ -1,11 +1,10 @@
 import type { CSSProperties } from "react";
-import type { DocContentBlock } from "../../types";
 import { DocContentRenderer } from "../DocContentRenderer";
 import styles from "./DocArticle.module.css";
 
 type DocArticleProps = {
   bodyColor: string;
-  content: DocContentBlock[];
+  content: string[];
   id: string;
   textColor: string;
   title: string;
@@ -28,7 +27,7 @@ export function DocArticle({ bodyColor, content, id, textColor, title }: DocArti
         <h2>{title}</h2>
       </header>
       <div className={styles.body}>
-        <DocContentRenderer blocks={content} />
+        <DocContentRenderer paragraphs={content} />
       </div>
     </article>
   );

@@ -47,40 +47,41 @@ const ptBrSections = JSON.parse(
   )
 );
 
-function getContentBlocks(nodes) {
-  return nodes.flatMap((node) => [
-    ...(node.content ?? []),
-    ...getContentBlocks(node.children ?? [])
-  ]);
+function getDocumentationNodes(nodes) {
+  return nodes.flatMap((node) => [node, ...getDocumentationNodes(node.children ?? [])]);
 }
 
-test("documentation content uses the single current-content schema", () => {
+test("automatic documentation uses ordered paragraph arrays without type discriminators", () => {
   for (const sections of [enSections, ptBrSections]) {
-    const blocks = getContentBlocks(sections);
+    const contentNodes = getDocumentationNodes(sections).filter((node) => node.content);
 
-    assert.ok(blocks.length > 0);
+    assert.ok(contentNodes.length > 0);
 
-    for (const block of blocks) {
-      assert.equal(Object.hasOwn(block, "vpetVersions"), false);
-      assert.equal(Object.hasOwn(block, "changes"), false);
-
-      if (block.type === "text") {
-        assert.equal(typeof block.content, "string");
-        assert.ok(block.content.length > 0);
+    for (const node of contentNodes) {
+      assert.ok(Array.isArray(node.content));
+      for (const paragraph of node.content) {
+        assert.equal(typeof paragraph, "string");
+        assert.ok(paragraph.length > 0);
       }
     }
+
+    assert.doesNotMatch(JSON.stringify(sections), /"type"|vpetVersions|"changes"/);
   }
 });
 
-test("documentation rendering has no version resolution or filtering", () => {
-  assert.doesNotMatch(typesSource, /VersionedText|VersionedContent|vpetVersions|changes/);
+test("automatic documentation renders paragraphs in array order without type dispatch", () => {
+  assert.doesNotMatch(
+    typesSource,
+    /DocContentBlock|DocTextBlock|DocImageBlock|DocVideoBlock|DocCustomBlock|type:/
+  );
+  assert.match(typesSource, /content\?: string\[\]/);
   assert.doesNotMatch(siteContentSource, /resolveVersionedText|currentVersion/);
   assert.doesNotMatch(
     contentRendererSource,
-    /resolveVersionedText|shouldRenderBlock|currentVersion|vpetVersions/
+    /next\/image|iframe|CustomComponent|block\.type|\.sort\(|\.reverse\(/
   );
-  assert.match(contentRendererSource, /blocks\.map\(/);
-  assert.match(contentRendererSource, /block\.content/);
+  assert.match(contentRendererSource, /paragraphs\.map\(\(paragraph, index\)/);
+  assert.match(contentRendererSource, /<p key=\{index\}>\{paragraph\}<\/p>/);
 });
 
 test("current device version is required server-side and passed for presentation", () => {

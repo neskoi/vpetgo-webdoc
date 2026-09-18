@@ -201,21 +201,21 @@ And they do not add version branches to documentation content.
 - [x] Run the test suite.
 - [x] Run the production build.
 
-### Pending: Paragraph-Only Automatic Rendering
+### Completed: Paragraph-Only Automatic Rendering
 
-- [ ] Change `DocNode.content` to `string[]`.
-- [ ] Remove `DocContentBlock` and its text, image, video, and custom variants.
-- [ ] Change documentation article content properties to `string[]`.
-- [ ] Simplify the automatic content renderer to render paragraphs only.
-- [ ] Remove content-type dispatch from the automatic renderer.
-- [ ] Remove `type` from English automatic documentation content.
-- [ ] Remove `type` from Brazilian Portuguese automatic documentation content.
-- [ ] Convert English content strings to paragraph arrays.
-- [ ] Convert Brazilian Portuguese content strings to paragraph arrays.
-- [ ] Keep media and accessibility metadata scoped to custom documentation components.
-- [ ] Update content schema tests for paragraph arrays without type discriminators.
-- [ ] Add a test proving automatic paragraphs preserve array order.
-- [ ] Run the test suite and production build after the paragraph migration.
+- [x] Change `DocNode.content` to `string[]`.
+- [x] Remove `DocContentBlock` and its text, image, video, and custom variants.
+- [x] Change documentation article content properties to `string[]`.
+- [x] Simplify the automatic content renderer to render paragraphs only.
+- [x] Remove content-type dispatch from the automatic renderer.
+- [x] Remove `type` from English automatic documentation content.
+- [x] Remove `type` from Brazilian Portuguese automatic documentation content.
+- [x] Convert English content strings to paragraph arrays.
+- [x] Convert Brazilian Portuguese content strings to paragraph arrays.
+- [x] Keep media and accessibility metadata scoped to custom documentation components.
+- [x] Update content schema tests for paragraph arrays without type discriminators.
+- [x] Add a test proving automatic paragraphs preserve array order.
+- [x] Run the test suite and production build after the paragraph migration.
 
 ## Acceptance Criteria
 

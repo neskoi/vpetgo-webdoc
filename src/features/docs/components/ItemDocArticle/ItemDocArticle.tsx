@@ -1,9 +1,8 @@
-import type { DocContentBlock } from "../../types";
 import { DocContentRenderer } from "../DocContentRenderer";
 import styles from "./ItemDocArticle.module.css";
 
 type ItemDocArticleProps = {
-  content: DocContentBlock[];
+  content: string[];
   htmlId: string;
   title: string;
 };
@@ -16,7 +15,7 @@ export function ItemDocArticle({ content, htmlId, title }: ItemDocArticleProps) 
         <h2>{title}</h2>
       </header>
       <div className={styles.body}>
-        <DocContentRenderer blocks={content} />
+        <DocContentRenderer paragraphs={content} />
       </div>
     </article>
   );
