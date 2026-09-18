@@ -26,6 +26,6 @@ test("localized documentation navigation preserves stable ids", () => {
 
 test("documentation root nodes are localized dividers", () => {
   assert.deepEqual(enSections.map((item) => item.id), ["getting-started", "on-vpet-go"]);
-  assert.deepEqual(enSections.map((item) => item.title), ["Getting Started", "On Vpet GO"]);
-  assert.deepEqual(ptBrSections.map((item) => item.title), ["Primeiros Passos", "No Vpet GO"]);
+  assert.deepEqual(enSections.map((item) => item.title), ["Getting Started", "On VPET GO"]);
+  assert.deepEqual(ptBrSections.map((item) => item.title), ["Primeiros Passos", "No VPET GO"]);
 });
