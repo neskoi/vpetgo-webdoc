@@ -12,22 +12,24 @@ The website proxies the public Drive files through same-origin Next.js endpoints
 
 The current reference release is VPET GO Nova 1.8.0 beta.
 
-The updater resolves the active release through one stable public Drive file:
+The updater resolves the active release through one stable public Drive file configured at deployment:
 
 ```text
 latest.json
-1P3Nallzwe7fPpBp1M-BZ-NH-3lgPLgDO
+GOOGLE_DRIVE_FIRMWARE_LATEST_FILE_ID
 ```
 
 `latest.json` contains the current Light firmware file ID, Light manifest file ID, Full VPGo package file ID, and release version.
 
-The deployment can optionally override only the `latest.json` ID:
+The deployment must provide the `latest.json` file ID:
 
 ```text
 GOOGLE_DRIVE_FIRMWARE_LATEST_FILE_ID
 ```
 
 Because the file is public, this ID is configuration rather than a secret.
+
+The firmware endpoint returns an unavailable response when this variable is missing or empty.
 
 ## Light Update
 

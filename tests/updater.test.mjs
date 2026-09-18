@@ -39,8 +39,11 @@ test("updater content exposes Light, Full, validation and erase states", () => {
   }
 });
 
-test("updater resolves releases through the fixed public latest manifest", () => {
-  assert.match(driveSource, /1P3Nallzwe7fPpBp1M-BZ-NH-3lgPLgDO/);
+test("updater requires the public latest manifest file ID from the environment", () => {
+  assert.match(driveSource, /process\.env\.GOOGLE_DRIVE_FIRMWARE_LATEST_FILE_ID/);
+  assert.match(driveSource, /GOOGLE_DRIVE_FIRMWARE_LATEST_FILE_ID environment variable is required/);
+  assert.doesNotMatch(driveSource, /DEFAULT_LATEST_FILE_ID/);
+  assert.doesNotMatch(driveSource, /1P3Nallzwe7fPpBp1M-BZ-NH-3lgPLgDO/);
   assert.match(driveSource, /VPGO_LATEST_1/);
   assert.match(driveSource, /firmware_file_id/);
   assert.match(driveSource, /manifest_file_id/);
