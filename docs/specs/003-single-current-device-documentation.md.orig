@@ -214,8 +214,8 @@ And they do not add version branches to documentation content.
 - [ ] Convert Brazilian Portuguese content strings to paragraph arrays.
 - [ ] Keep media and accessibility metadata scoped to custom documentation components.
 - [ ] Update content schema tests for paragraph arrays without type discriminators.
-- [ ] Add a test proving automatic paragraphs preserve array order.
 - [ ] Run the test suite and production build after the paragraph migration.
+- [ ] Add a test proving automatic paragraphs preserve array order.
 
 ## Acceptance Criteria
 

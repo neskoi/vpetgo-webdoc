@@ -40,22 +40,37 @@ The value is treated as a non-empty display label. The application does not pars
 
 ## Content Model
 
-Automatically rendered documentation nodes contain their current localized paragraphs directly:
+Documentation blocks contain their current content directly:
 
 ```ts
-type DocNode = {
-  id: string;
+type DocTextBlock = {
+  type: "text";
+  content: string;
+};
+
+type DocImageBlock = {
+  type: "image";
+  alt: string;
+  caption?: string;
+  height?: number;
+  src: string;
+  width?: number;
+};
+
+type DocVideoBlock = {
+  type: "video";
+  src: string;
   title: string;
-  content?: string[];
-  children?: DocNode[];
+};
+
+type DocCustomBlock = {
+  type: "custom";
+  component: DocCustomComponentKey;
+  props?: Record<string, unknown>;
 };
 ```
 
-Each string is one paragraph, in display order. The automatic content schema has no `type` discriminator because it supports only text.
-
-Custom documentation components are selected outside the automatic content renderer. They own their layout, media, behavior, and any component-specific data contract. Localized alt text, captions, or labels required by a custom component must live in data scoped to that component instead of widening the generic documentation schema.
-
-Version-specific fields such as `vpetVersions`, `changes`, and maps of text by version are not part of either model.
+Version-specific fields such as `vpetVersions`, `changes`, and maps of text by version are not part of the model.
 
 ## Configuration Rules
 
@@ -80,8 +95,6 @@ Content updates and version metadata should be reviewed as one release change. T
 ### Benefits
 
 - The content schema and renderer are substantially simpler.
-- The automatic renderer reflects its actual responsibility: rendering localized paragraphs.
-- Media-specific concerns stay close to the custom components that use them.
 - Editors work with direct current content instead of version deltas and inheritance.
 - The application no longer compares version strings or resolves fallback content.
 - Obsolete documentation is not shipped to users.
@@ -94,9 +107,7 @@ Content updates and version metadata should be reviewed as one release change. T
 - Users who remain on old firmware are directed by documentation for the current release.
 - Content changes and the deployment version value must be coordinated.
 - Historical communication requires separate release notes or a changelog if it becomes necessary.
-- Reusable media behavior must be implemented explicitly by custom components.
-- Custom components that need localized media metadata require their own scoped data contracts.
 
 ## Superseded Decision
 
-This ADR supersedes [ADR 001: Modular Versioned Documentation Structure](./001-doc-structure.md). Localization and modular documentation nodes remain valid architectural choices, but heterogeneous automatic blocks, version deltas, progressive fallback, and historical documentation selection are discontinued.
+This ADR supersedes [ADR 001: Modular Versioned Documentation Structure](./001-doc-structure.md). Localization and modular documentation blocks remain valid architectural choices, but version deltas, progressive fallback, and historical documentation selection are discontinued.
