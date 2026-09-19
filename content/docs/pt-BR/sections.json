@@ -63,6 +63,20 @@
             ],
             "children": [
               {
+                "id": "item-items-description",
+                "title": "Items description",
+                "content": [
+                  "Itens para ajudar no cuidado e dar bonus que ajudam durante a aventura. Use cada um deles no momento certo e mantenha seu Digimon em boa forma."
+                ]
+              },
+              {
+                "id": "item-special-description",
+                "title": "Special items description",
+                "content": [
+                  "Itens especiais com efeitos únicos. Eles podem te ajudar em momentos difíceis ou abrir novas possibilidades para sua jornada!"
+                ]
+              },
+              {
                 "id": "item-ap-chip",
                 "title": "AP Chip",
                 "content": [

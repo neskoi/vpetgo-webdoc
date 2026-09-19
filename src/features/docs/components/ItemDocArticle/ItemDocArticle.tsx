@@ -38,6 +38,8 @@ type ItemDocArticleProps = {
 
 export function ItemDocArticle({ children = [], content, htmlId, title }: ItemDocArticleProps) {
   const itemDocs = new Map(children.map((child) => [child.id, child]));
+  const itemsDescription = itemDocs.get("item-items-description")?.content ?? [];
+  const specialDescription = itemDocs.get("item-special-description")?.content ?? [];
 
   function renderItem(item: ItemDefinition) {
     const itemDoc = itemDocs.get(`item-${item.docId}`);
@@ -58,15 +60,17 @@ export function ItemDocArticle({ children = [], content, htmlId, title }: ItemDo
 
   return (
     <ArticleCard
-      bodyColor="var(--color-pink)"
+      bodyColor="var(--color-sky-dark)"
       id={htmlId}
       textColor="var(--color-white)"
       title={title}
     >
       <DocContentRenderer paragraphs={content} />
       <h2 className={styles.itemSectionTitle}>🍖​ ITEMS</h2>
+      <DocContentRenderer paragraphs={itemsDescription} />
       <div className={styles.itemGrid}>{items.map(renderItem)}</div>
       <h2 className={styles.itemSectionTitle}>⭐ SPECIAL</h2>
+      <DocContentRenderer paragraphs={specialDescription} />
       <div className={styles.itemGrid}>{specialItems.map(renderItem)}</div>
     </ArticleCard>
   );
