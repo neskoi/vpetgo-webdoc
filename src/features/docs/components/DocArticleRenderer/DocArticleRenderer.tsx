@@ -1,11 +1,13 @@
 import type { ComponentType } from "react";
 import { DocArticle } from "../DocArticle";
 import { ItemDocArticle } from "../ItemDocArticle";
+import type { DocNode } from "../../types";
 
 type DocArticleRendererProps = {
   bodyColor: string;
   content: string[];
   contentId: string;
+  children?: DocNode[];
   htmlId: string;
   textColor: string;
   title: string;
@@ -19,6 +21,7 @@ const customDocArticles: Record<string, ComponentType<CustomDocArticleProps>> = 
 
 export function DocArticleRenderer({
   bodyColor,
+  children,
   content,
   contentId,
   htmlId,
@@ -31,6 +34,7 @@ export function DocArticleRenderer({
     return (
       <CustomDocArticle
         content={content}
+        children={children}
         htmlId={htmlId}
         title={title}
       />

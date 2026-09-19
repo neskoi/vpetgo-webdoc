@@ -29,6 +29,8 @@ export const siteContent: Record<
   }
 };
 
+const customDocNodeIds = new Set(["item"]);
+
 export function hasDocContent(node: DocNode): boolean {
   return Boolean(node.content?.length);
 }
@@ -54,6 +56,10 @@ export function findFirstRenderableDocNode(node: DocNode): DocNode | undefined {
 }
 
 export function getRenderableDocNodesFromSubtree(node: DocNode): DocNode[] {
+  if (customDocNodeIds.has(node.id)) {
+    return hasDocContent(node) ? [node] : [];
+  }
+
   return [
     ...(hasDocContent(node) ? [node] : []),
     ...(node.children ?? []).flatMap((child) => getRenderableDocNodesFromSubtree(child))
@@ -91,7 +97,14 @@ export function findDocNode(locale: Locale, nodeId: string): DocNode | undefined
 export function resolveDocNode(locale: Locale, nodeId: string): DocNode | undefined {
   const node = findDocNode(locale, nodeId);
 
-  return node ? findFirstRenderableDocNode(node) : undefined;
+  if (!node) {
+    return undefined;
+  }
+
+  const nodePath = findDocNodePath(getDocNodes(locale), nodeId);
+  const customParent = nodePath.find((pathNode) => customDocNodeIds.has(pathNode.id));
+
+  return customParent ?? findFirstRenderableDocNode(node);
 }
 
 export function getDefaultDocSectionId(locale: Locale): string {
