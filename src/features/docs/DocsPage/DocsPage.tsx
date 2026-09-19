@@ -124,6 +124,7 @@ export function DocsPage({ currentDeviceVersion, locale }: DocsPageProps) {
                   bodyColor={articleColors[index % articleColors.length].bodyColor}
                   content={node.content ?? []}
                   contentId={node.id}
+                  children={node.children}
                   htmlId={node.id}
                   key={node.id}
                   textColor={articleColors[index % articleColors.length].textColor}

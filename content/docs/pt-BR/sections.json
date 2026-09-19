@@ -55,11 +55,142 @@
         "children": [
           {
             "id": "item",
-            "title": "Food",
+            "title": "Item",
             "content": [
-              "Meat preenche os corações de Hunger do Digimon e é um recurso infinito.",
-              "Protein preenche os corações de Strength do Digimon e é um recurso ilimitado. Também aumenta o Weight do Digimon.",
-              "Existem mais itens com efeitos diversos."
+              "Existem vários itens que podem ser usados para cuidar do seu parceiro Digimon!",
+              "Alguns deles você terá sempre a disposição, enquanto outros podem ser comprados na Store ou obtidos em Quest apos uma batalha difícil.",
+              "Independente de qual item ou como você o conseguiu, é bom saber o que ele faz antes de usar!"
+            ],
+            "children": [
+              {
+                "id": "item-items-description",
+                "title": "Items description",
+                "content": [
+                  "Itens para ajudar no cuidado e dar bonus que ajudam durante a aventura. Use cada um deles no momento certo e mantenha seu Digimon em boa forma."
+                ]
+              },
+              {
+                "id": "item-special-description",
+                "title": "Special items description",
+                "content": [
+                  "Itens especiais com efeitos únicos. Eles podem te ajudar em momentos difíceis ou abrir novas possibilidades para sua jornada!"
+                ]
+              },
+              {
+                "id": "item-ap-chip",
+                "title": "AP Chip",
+                "content": [
+                  "Aumenta o ataque do seu Digimon temporariamente para os próximos combates!"
+                ]
+              },
+              {
+                "id": "item-big-protein",
+                "title": "Big Protein",
+                "content": [
+                  "Preenche completamente os corações de strength do seu Digimon."
+                ]
+              },
+              {
+                "id": "item-d-poison",
+                "title": "D-Poison",
+                "content": [
+                  "Remove um care mistake."
+                ]
+              },
+              {
+                "id": "item-exp",
+                "title": "EXP",
+                "content": [
+                  "Aumenta temporariamente a experiência que o seu Digimon ganha em batalha."
+                ]
+              },
+              {
+                "id": "item-evo-5",
+                "title": "Evo 5",
+                "content": [
+                  "Força a próxima evolução natural."
+                ]
+              },
+              {
+                "id": "item-filling-meat",
+                "title": "Filling Meat",
+                "content": [
+                  "Preenche completamente os corações de hunger do seu Digimon."
+                ]
+              },
+              {
+                "id": "item-forest-leaf",
+                "title": "Forest Leaf",
+                "content": [
+                  "Reinicia o contador de injury."
+                ]
+              },
+              {
+                "id": "item-gif",
+                "title": "Gift",
+                "content": [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ]
+              },
+              {
+                "id": "item-hp-room",
+                "title": "HP Room",
+                "content": [
+                  "Aumenta o HP do seu Digimon temporariamente para os próximos combates!"
+                ]
+              },
+              {
+                "id": "item-jumper-board",
+                "title": "Jumper Gate",
+                "content": [
+                  "Ajuda na progressão da Quest."
+                ]
+              },
+              {
+                "id": "item-level-reverse",
+                "title": "Level Reverse",
+                "content": [
+                  "Faz com que seu Digimon retorne um nível evolutivo."
+                ]
+              },
+              {
+                "id": "item-master-tag",
+                "title": "Master Tag",
+                "content": [
+                  "Enche todos o corações de hunger e strength.",
+                  "Remove todos os care mistakes, injuries e sickness.",
+                  "Sobe o nível do Digimon par ao máximo.",
+                  "Reinicia o timer de evolução se preciso."
+                ]
+              },
+              {
+                "id": "item-pw-board",
+                "title": "PW Board",
+                "content": [
+                  "Aumenta o power do seu Digimon temporariamente para os próximos combates!"
+                ]
+              },
+              {
+                "id": "item-str-max",
+                "title": "STR-MAX",
+                "content": [
+                  "Enche todos o corações de hunger e strength. Também poem o effort no máximo."
+                ]
+              },
+              {
+                "id": "item-seven-switch",
+                "title": "Seven Switch",
+                "content": [
+                  "Aumenta sua sorte dando vantagem em coisas que dependam do mini game de dados."
+                ]
+              },
+              {
+                "id": "item-zombie-meat",
+                "title": "Zombie Meat",
+                "content": [
+                  "Reinicia o contador de sickness"
+                ]
+              }
             ]
           },
           {

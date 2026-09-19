@@ -23,22 +23,11 @@ function getStorageKey(locale: Locale): string {
   return `vpetgo.docs.openSections.${locale}`;
 }
 
-function collectExpandableNodeIds(nodes: DocNode[], openNodeIds = new Set<string>()): Set<string> {
-  nodes.forEach((node) => {
-    if (node.children?.length) {
-      openNodeIds.add(node.id);
-      collectExpandableNodeIds(node.children, openNodeIds);
-    }
-  });
-
-  return openNodeIds;
-}
-
-function readOpenSectionIds(locale: Locale, sections: DocNode[]): Set<string> {
+function readOpenSectionIds(locale: Locale): Set<string> {
   const storedValue = window.localStorage.getItem(getStorageKey(locale));
 
   if (!storedValue) {
-    return collectExpandableNodeIds(sections);
+    return new Set();
   }
 
   try {
@@ -51,7 +40,7 @@ function readOpenSectionIds(locale: Locale, sections: DocNode[]): Set<string> {
     window.localStorage.removeItem(getStorageKey(locale));
   }
 
-  return collectExpandableNodeIds(sections);
+  return new Set();
 }
 
 function writeOpenSectionIds(locale: Locale, sectionIds: Set<string>) {
@@ -59,12 +48,12 @@ function writeOpenSectionIds(locale: Locale, sectionIds: Set<string>) {
 }
 
 export function DocsSidebar({ activeSectionId, label, locale, onSelectSection, sections }: DocsSidebarProps) {
-  const [openSectionIds, setOpenSectionIds] = useState<Set<string>>(() => collectExpandableNodeIds(sections));
+  const [openSectionIds, setOpenSectionIds] = useState<Set<string>>(() => new Set());
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
-      setOpenSectionIds(readOpenSectionIds(locale, sections));
+      setOpenSectionIds(readOpenSectionIds(locale));
     }, 0);
 
     return () => window.clearTimeout(timeoutId);
