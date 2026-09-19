@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Superseded by [ADR 002: Single Current Device Documentation](./002-single-current-device-documentation.md)
 
 ## Context
 

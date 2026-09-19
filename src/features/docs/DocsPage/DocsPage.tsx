@@ -8,10 +8,10 @@ import { DocsSidebar } from "../components/DocsSidebar";
 import styles from "./DocsPage.module.css";
 
 type DocsPageProps = {
+  currentDeviceVersion: string;
   locale: Locale;
 };
 
-const currentVersion = "1.7.0";
 const articleColors = [
   { bodyColor: "var(--color-sky-dark)", textColor: "var(--color-white)" },
   { bodyColor: "var(--color-purple)", textColor: "var(--color-white)" },
@@ -24,7 +24,7 @@ function readSectionIdFromUrl(validSectionIds: string[], defaultSectionId: strin
   return sectionId && validSectionIds.includes(sectionId) ? sectionId : defaultSectionId;
 }
 
-export function DocsPage({ locale }: DocsPageProps) {
+export function DocsPage({ currentDeviceVersion, locale }: DocsPageProps) {
   const content = siteContent[locale].docs;
   const defaultSectionId = getDefaultDocSectionId(locale);
   const validSectionIds = useMemo(() => getDocSectionIds(locale), [locale]);
@@ -74,7 +74,7 @@ export function DocsPage({ locale }: DocsPageProps) {
     <div className={styles.page}>
       <section className={styles.hero}>
         <div>
-          <h1 className={styles.title}>{content.title} {currentVersion}</h1>
+          <h1 className={styles.title}>{content.title} {currentDeviceVersion}</h1>
           <p>{content.intro}</p>
         </div>
       </section>
@@ -124,7 +124,7 @@ export function DocsPage({ locale }: DocsPageProps) {
                   bodyColor={articleColors[index % articleColors.length].bodyColor}
                   content={node.content ?? []}
                   contentId={node.id}
-                  currentVersion={currentVersion}
+                  children={node.children}
                   htmlId={node.id}
                   key={node.id}
                   textColor={articleColors[index % articleColors.length].textColor}

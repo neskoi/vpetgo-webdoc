@@ -3,7 +3,7 @@ import enDocsSections from "../../../content/docs/en/sections.json";
 import ptBrContent from "../../../content/pt-BR.json";
 import ptBrDocsSections from "../../../content/docs/pt-BR/sections.json";
 import type { Locale } from "@/shared/i18n/locales";
-import { defaultDocSectionId, type DocNode, type DocTextBlock } from "@/features/docs/types";
+import { defaultDocSectionId, type DocNode } from "@/features/docs/types";
 
 export const siteContent: Record<
   Locale,
@@ -28,6 +28,8 @@ export const siteContent: Record<
     }
   }
 };
+
+const customDocNodeIds = new Set(["item"]);
 
 export function hasDocContent(node: DocNode): boolean {
   return Boolean(node.content?.length);
@@ -54,6 +56,10 @@ export function findFirstRenderableDocNode(node: DocNode): DocNode | undefined {
 }
 
 export function getRenderableDocNodesFromSubtree(node: DocNode): DocNode[] {
+  if (customDocNodeIds.has(node.id)) {
+    return hasDocContent(node) ? [node] : [];
+  }
+
   return [
     ...(hasDocContent(node) ? [node] : []),
     ...(node.children ?? []).flatMap((child) => getRenderableDocNodesFromSubtree(child))
@@ -91,7 +97,14 @@ export function findDocNode(locale: Locale, nodeId: string): DocNode | undefined
 export function resolveDocNode(locale: Locale, nodeId: string): DocNode | undefined {
   const node = findDocNode(locale, nodeId);
 
-  return node ? findFirstRenderableDocNode(node) : undefined;
+  if (!node) {
+    return undefined;
+  }
+
+  const nodePath = findDocNodePath(getDocNodes(locale), nodeId);
+  const customParent = nodePath.find((pathNode) => customDocNodeIds.has(pathNode.id));
+
+  return customParent ?? findFirstRenderableDocNode(node);
 }
 
 export function getDefaultDocSectionId(locale: Locale): string {
@@ -100,16 +113,4 @@ export function getDefaultDocSectionId(locale: Locale): string {
 
 export function getDocSectionIds(locale: Locale): string[] {
   return getRenderableDocNodes(locale).map((node) => node.id);
-}
-
-export function resolveVersionedText(block: DocTextBlock, currentVersion: string): string {
-  if (block.content[currentVersion]) {
-    return block.content[currentVersion];
-  }
-
-  const previousVersion = [...(block.vpetVersions ?? [])]
-    .reverse()
-    .find((version) => version < currentVersion && block.content[version]);
-
-  return previousVersion ? block.content[previousVersion] : block.content.default;
 }
