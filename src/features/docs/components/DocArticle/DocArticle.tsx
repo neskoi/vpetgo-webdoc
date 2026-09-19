@@ -1,6 +1,5 @@
-import type { CSSProperties } from "react";
+import { ArticleCard } from "@/shared/ui/ArticleCard";
 import { DocContentRenderer } from "../DocContentRenderer";
-import styles from "./DocArticle.module.css";
 
 type DocArticleProps = {
   bodyColor: string;
@@ -10,25 +9,10 @@ type DocArticleProps = {
   title: string;
 };
 
-type DocArticleStyle = CSSProperties & {
-  "--doc-article-body": string;
-  "--doc-article-text": string;
-};
-
 export function DocArticle({ bodyColor, content, id, textColor, title }: DocArticleProps) {
-  const style: DocArticleStyle = {
-    "--doc-article-body": bodyColor,
-    "--doc-article-text": textColor
-  };
-
   return (
-    <article className={styles.article} id={id} style={style}>
-      <header className={styles.header}>
-        <h2>{title}</h2>
-      </header>
-      <div className={styles.body}>
+    <ArticleCard bodyColor={bodyColor} id={id} textColor={textColor} title={title}>
         <DocContentRenderer paragraphs={content} />
-      </div>
-    </article>
+    </ArticleCard>
   );
 }
